@@ -1,0 +1,484 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		75215B1F191916A800417D56 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75215B1E191916A800417D56 /* Foundation.framework */; };
+		75215B21191916A800417D56 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75215B20191916A800417D56 /* CoreGraphics.framework */; };
+		75215B23191916A800417D56 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75215B22191916A800417D56 /* UIKit.framework */; };
+		75215B29191916A800417D56 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 75215B27191916A800417D56 /* InfoPlist.strings */; };
+		75215B2B191916A800417D56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 75215B2A191916A800417D56 /* main.m */; };
+		75215B2F191916A800417D56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 75215B2E191916A800417D56 /* AppDelegate.m */; };
+		75215B31191916A800417D56 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75215B30191916A800417D56 /* Images.xcassets */; };
+		75215B38191916A800417D56 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75215B37191916A800417D56 /* XCTest.framework */; };
+		75215B39191916A800417D56 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75215B1E191916A800417D56 /* Foundation.framework */; };
+		75215B3A191916A800417D56 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75215B22191916A800417D56 /* UIKit.framework */; };
+		75215B42191916A800417D56 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 75215B40191916A800417D56 /* InfoPlist.strings */; };
+		75215B44191916A800417D56 /* DynamicFeedbackFormTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 75215B43191916A800417D56 /* DynamicFeedbackFormTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		75215B3B191916A800417D56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 75215B13191916A800417D56 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 75215B1A191916A800417D56;
+			remoteInfo = DynamicFeedbackForm;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		75215B1B191916A800417D56 /* DynamicFeedbackForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicFeedbackForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		75215B1E191916A800417D56 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		75215B20191916A800417D56 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		75215B22191916A800417D56 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		75215B26191916A800417D56 /* DynamicFeedbackForm-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DynamicFeedbackForm-Info.plist"; sourceTree = "<group>"; };
+		75215B28191916A800417D56 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		75215B2A191916A800417D56 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		75215B2C191916A800417D56 /* DynamicFeedbackForm-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DynamicFeedbackForm-Prefix.pch"; sourceTree = "<group>"; };
+		75215B2D191916A800417D56 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		75215B2E191916A800417D56 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		75215B30191916A800417D56 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		75215B36191916A800417D56 /* DynamicFeedbackFormTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DynamicFeedbackFormTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		75215B37191916A800417D56 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		75215B3F191916A800417D56 /* DynamicFeedbackFormTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DynamicFeedbackFormTests-Info.plist"; sourceTree = "<group>"; };
+		75215B41191916A800417D56 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		75215B43191916A800417D56 /* DynamicFeedbackFormTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicFeedbackFormTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		75215B18191916A800417D56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75215B21191916A800417D56 /* CoreGraphics.framework in Frameworks */,
+				75215B23191916A800417D56 /* UIKit.framework in Frameworks */,
+				75215B1F191916A800417D56 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75215B33191916A800417D56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75215B38191916A800417D56 /* XCTest.framework in Frameworks */,
+				75215B3A191916A800417D56 /* UIKit.framework in Frameworks */,
+				75215B39191916A800417D56 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		75215B12191916A800417D56 = {
+			isa = PBXGroup;
+			children = (
+				75215B24191916A800417D56 /* DynamicFeedbackForm */,
+				75215B3D191916A800417D56 /* DynamicFeedbackFormTests */,
+				75215B1D191916A800417D56 /* Frameworks */,
+				75215B1C191916A800417D56 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		75215B1C191916A800417D56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				75215B1B191916A800417D56 /* DynamicFeedbackForm.app */,
+				75215B36191916A800417D56 /* DynamicFeedbackFormTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		75215B1D191916A800417D56 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				75215B1E191916A800417D56 /* Foundation.framework */,
+				75215B20191916A800417D56 /* CoreGraphics.framework */,
+				75215B22191916A800417D56 /* UIKit.framework */,
+				75215B37191916A800417D56 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		75215B24191916A800417D56 /* DynamicFeedbackForm */ = {
+			isa = PBXGroup;
+			children = (
+				75215B4D191916CC00417D56 /* AppDelegate */,
+				75215B50191916D800417D56 /* Model */,
+				75215B4F191916D600417D56 /* View */,
+				75215B4E191916D400417D56 /* Controller */,
+				75215B30191916A800417D56 /* Images.xcassets */,
+				75215B25191916A800417D56 /* Supporting Files */,
+			);
+			path = DynamicFeedbackForm;
+			sourceTree = "<group>";
+		};
+		75215B25191916A800417D56 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				75215B26191916A800417D56 /* DynamicFeedbackForm-Info.plist */,
+				75215B27191916A800417D56 /* InfoPlist.strings */,
+				75215B2A191916A800417D56 /* main.m */,
+				75215B2C191916A800417D56 /* DynamicFeedbackForm-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		75215B3D191916A800417D56 /* DynamicFeedbackFormTests */ = {
+			isa = PBXGroup;
+			children = (
+				75215B43191916A800417D56 /* DynamicFeedbackFormTests.m */,
+				75215B3E191916A800417D56 /* Supporting Files */,
+			);
+			path = DynamicFeedbackFormTests;
+			sourceTree = "<group>";
+		};
+		75215B3E191916A800417D56 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				75215B3F191916A800417D56 /* DynamicFeedbackFormTests-Info.plist */,
+				75215B40191916A800417D56 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		75215B4D191916CC00417D56 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				75215B2D191916A800417D56 /* AppDelegate.h */,
+				75215B2E191916A800417D56 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		75215B4E191916D400417D56 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		75215B4F191916D600417D56 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		75215B50191916D800417D56 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		75215B1A191916A800417D56 /* DynamicFeedbackForm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75215B47191916A800417D56 /* Build configuration list for PBXNativeTarget "DynamicFeedbackForm" */;
+			buildPhases = (
+				75215B17191916A800417D56 /* Sources */,
+				75215B18191916A800417D56 /* Frameworks */,
+				75215B19191916A800417D56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DynamicFeedbackForm;
+			productName = DynamicFeedbackForm;
+			productReference = 75215B1B191916A800417D56 /* DynamicFeedbackForm.app */;
+			productType = "com.apple.product-type.application";
+		};
+		75215B35191916A800417D56 /* DynamicFeedbackFormTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75215B4A191916A800417D56 /* Build configuration list for PBXNativeTarget "DynamicFeedbackFormTests" */;
+			buildPhases = (
+				75215B32191916A800417D56 /* Sources */,
+				75215B33191916A800417D56 /* Frameworks */,
+				75215B34191916A800417D56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				75215B3C191916A800417D56 /* PBXTargetDependency */,
+			);
+			name = DynamicFeedbackFormTests;
+			productName = DynamicFeedbackFormTests;
+			productReference = 75215B36191916A800417D56 /* DynamicFeedbackFormTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		75215B13191916A800417D56 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Jan Hennings";
+				TargetAttributes = {
+					75215B35191916A800417D56 = {
+						TestTargetID = 75215B1A191916A800417D56;
+					};
+				};
+			};
+			buildConfigurationList = 75215B16191916A800417D56 /* Build configuration list for PBXProject "DynamicFeedbackForm" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 75215B12191916A800417D56;
+			productRefGroup = 75215B1C191916A800417D56 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				75215B1A191916A800417D56 /* DynamicFeedbackForm */,
+				75215B35191916A800417D56 /* DynamicFeedbackFormTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		75215B19191916A800417D56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75215B29191916A800417D56 /* InfoPlist.strings in Resources */,
+				75215B31191916A800417D56 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75215B34191916A800417D56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75215B42191916A800417D56 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		75215B17191916A800417D56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75215B2F191916A800417D56 /* AppDelegate.m in Sources */,
+				75215B2B191916A800417D56 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75215B32191916A800417D56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75215B44191916A800417D56 /* DynamicFeedbackFormTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		75215B3C191916A800417D56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 75215B1A191916A800417D56 /* DynamicFeedbackForm */;
+			targetProxy = 75215B3B191916A800417D56 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		75215B27191916A800417D56 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				75215B28191916A800417D56 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		75215B40191916A800417D56 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				75215B41191916A800417D56 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		75215B45191916A800417D56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		75215B46191916A800417D56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		75215B48191916A800417D56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DynamicFeedbackForm/DynamicFeedbackForm-Prefix.pch";
+				INFOPLIST_FILE = "DynamicFeedbackForm/DynamicFeedbackForm-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		75215B49191916A800417D56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DynamicFeedbackForm/DynamicFeedbackForm-Prefix.pch";
+				INFOPLIST_FILE = "DynamicFeedbackForm/DynamicFeedbackForm-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		75215B4B191916A800417D56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DynamicFeedbackForm.app/DynamicFeedbackForm";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DynamicFeedbackForm/DynamicFeedbackForm-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DynamicFeedbackFormTests/DynamicFeedbackFormTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		75215B4C191916A800417D56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DynamicFeedbackForm.app/DynamicFeedbackForm";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DynamicFeedbackForm/DynamicFeedbackForm-Prefix.pch";
+				INFOPLIST_FILE = "DynamicFeedbackFormTests/DynamicFeedbackFormTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		75215B16191916A800417D56 /* Build configuration list for PBXProject "DynamicFeedbackForm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75215B45191916A800417D56 /* Debug */,
+				75215B46191916A800417D56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		75215B47191916A800417D56 /* Build configuration list for PBXNativeTarget "DynamicFeedbackForm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75215B48191916A800417D56 /* Debug */,
+				75215B49191916A800417D56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		75215B4A191916A800417D56 /* Build configuration list for PBXNativeTarget "DynamicFeedbackFormTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75215B4B191916A800417D56 /* Debug */,
+				75215B4C191916A800417D56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 75215B13191916A800417D56 /* Project object */;
+}
