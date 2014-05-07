@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75147BAF191961BB002FF952 /* FormItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75147BAE191961BB002FF952 /* FormItemCell.m */; };
+		75147BB21919628B002FF952 /* FormItemPlainTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75147BB11919628B002FF952 /* FormItemPlainTextCell.m */; };
+		75147BB51919629D002FF952 /* FormItemListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75147BB41919629D002FF952 /* FormItemListCell.m */; };
+		75147BB8191962A9002FF952 /* FormItemPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75147BB7191962A9002FF952 /* FormItemPhotoCell.m */; };
+		75147BBB191962C6002FF952 /* FormItemTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75147BBA191962C6002FF952 /* FormItemTextViewCell.m */; };
+		75147BBE191962DF002FF952 /* FormItemSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75147BBD191962DF002FF952 /* FormItemSwitchCell.m */; };
+		75147BC1191962EE002FF952 /* FormItemSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75147BC0191962EE002FF952 /* FormItemSliderCell.m */; };
+		75147BC419196530002FF952 /* PlainTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75147BC319196530002FF952 /* PlainTextCell.xib */; };
+		75147BC61919653A002FF952 /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75147BC51919653A002FF952 /* ListCell.xib */; };
+		75147BC819196542002FF952 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75147BC719196542002FF952 /* PhotoCell.xib */; };
+		75147BCA19196553002FF952 /* TextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75147BC919196553002FF952 /* TextViewCell.xib */; };
+		75147BCC1919656A002FF952 /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75147BCB1919656A002FF952 /* SwitchCell.xib */; };
+		75147BCE19196578002FF952 /* SliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75147BCD19196578002FF952 /* SliderCell.xib */; };
 		75215B1F191916A800417D56 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75215B1E191916A800417D56 /* Foundation.framework */; };
 		75215B21191916A800417D56 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75215B20191916A800417D56 /* CoreGraphics.framework */; };
 		75215B23191916A800417D56 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75215B22191916A800417D56 /* UIKit.framework */; };
@@ -19,6 +32,12 @@
 		75215B3A191916A800417D56 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75215B22191916A800417D56 /* UIKit.framework */; };
 		75215B42191916A800417D56 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 75215B40191916A800417D56 /* InfoPlist.strings */; };
 		75215B44191916A800417D56 /* DynamicFeedbackFormTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 75215B43191916A800417D56 /* DynamicFeedbackFormTests.m */; };
+		75215B551919343600417D56 /* FormItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75215B541919343600417D56 /* FormItemsTableViewController.m */; };
+		75215B591919373600417D56 /* StartupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75215B571919373600417D56 /* StartupViewController.m */; };
+		75215B5D19193C8900417D56 /* FormItemsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 75215B5C19193C8900417D56 /* FormItemsManager.m */; };
+		75215B6019193D6100417D56 /* FormItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 75215B5F19193D6100417D56 /* FormItem.m */; };
+		7593E180191AA08800DA6571 /* FormItemTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7593E17F191AA08800DA6571 /* FormItemTextFieldCell.m */; };
+		7593E184191AA27400DA6571 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7593E183191AA27400DA6571 /* TextFieldCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +51,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		75147BAD191961BB002FF952 /* FormItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormItemCell.h; sourceTree = "<group>"; };
+		75147BAE191961BB002FF952 /* FormItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormItemCell.m; sourceTree = "<group>"; };
+		75147BB01919628B002FF952 /* FormItemPlainTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormItemPlainTextCell.h; sourceTree = "<group>"; };
+		75147BB11919628B002FF952 /* FormItemPlainTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormItemPlainTextCell.m; sourceTree = "<group>"; };
+		75147BB31919629D002FF952 /* FormItemListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormItemListCell.h; sourceTree = "<group>"; };
+		75147BB41919629D002FF952 /* FormItemListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormItemListCell.m; sourceTree = "<group>"; };
+		75147BB6191962A9002FF952 /* FormItemPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormItemPhotoCell.h; sourceTree = "<group>"; };
+		75147BB7191962A9002FF952 /* FormItemPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormItemPhotoCell.m; sourceTree = "<group>"; };
+		75147BB9191962C6002FF952 /* FormItemTextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormItemTextViewCell.h; sourceTree = "<group>"; };
+		75147BBA191962C6002FF952 /* FormItemTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormItemTextViewCell.m; sourceTree = "<group>"; };
+		75147BBC191962DF002FF952 /* FormItemSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormItemSwitchCell.h; sourceTree = "<group>"; };
+		75147BBD191962DF002FF952 /* FormItemSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormItemSwitchCell.m; sourceTree = "<group>"; };
+		75147BBF191962EE002FF952 /* FormItemSliderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormItemSliderCell.h; sourceTree = "<group>"; };
+		75147BC0191962EE002FF952 /* FormItemSliderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormItemSliderCell.m; sourceTree = "<group>"; };
+		75147BC219196354002FF952 /* FormItemCells.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FormItemCells.h; sourceTree = "<group>"; };
+		75147BC319196530002FF952 /* PlainTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlainTextCell.xib; sourceTree = "<group>"; };
+		75147BC51919653A002FF952 /* ListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
+		75147BC719196542002FF952 /* PhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
+		75147BC919196553002FF952 /* TextViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewCell.xib; sourceTree = "<group>"; };
+		75147BCB1919656A002FF952 /* SwitchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
+		75147BCD19196578002FF952 /* SliderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SliderCell.xib; sourceTree = "<group>"; };
 		75215B1B191916A800417D56 /* DynamicFeedbackForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicFeedbackForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75215B1E191916A800417D56 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		75215B20191916A800417D56 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,6 +88,17 @@
 		75215B3F191916A800417D56 /* DynamicFeedbackFormTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DynamicFeedbackFormTests-Info.plist"; sourceTree = "<group>"; };
 		75215B41191916A800417D56 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		75215B43191916A800417D56 /* DynamicFeedbackFormTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicFeedbackFormTests.m; sourceTree = "<group>"; };
+		75215B531919343600417D56 /* FormItemsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormItemsTableViewController.h; sourceTree = "<group>"; };
+		75215B541919343600417D56 /* FormItemsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormItemsTableViewController.m; sourceTree = "<group>"; };
+		75215B561919373600417D56 /* StartupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartupViewController.h; sourceTree = "<group>"; };
+		75215B571919373600417D56 /* StartupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartupViewController.m; sourceTree = "<group>"; };
+		75215B5B19193C8900417D56 /* FormItemsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormItemsManager.h; sourceTree = "<group>"; };
+		75215B5C19193C8900417D56 /* FormItemsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormItemsManager.m; sourceTree = "<group>"; };
+		75215B5E19193D6100417D56 /* FormItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormItem.h; sourceTree = "<group>"; };
+		75215B5F19193D6100417D56 /* FormItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormItem.m; sourceTree = "<group>"; };
+		7593E17E191AA08800DA6571 /* FormItemTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormItemTextFieldCell.h; sourceTree = "<group>"; };
+		7593E17F191AA08800DA6571 /* FormItemTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormItemTextFieldCell.m; sourceTree = "<group>"; };
+		7593E183191AA27400DA6571 /* TextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +209,10 @@
 		75215B4E191916D400417D56 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				75215B561919373600417D56 /* StartupViewController.h */,
+				75215B571919373600417D56 /* StartupViewController.m */,
+				75215B531919343600417D56 /* FormItemsTableViewController.h */,
+				75215B541919343600417D56 /* FormItemsTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -165,6 +220,30 @@
 		75215B4F191916D600417D56 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				75147BC219196354002FF952 /* FormItemCells.h */,
+				75147BAD191961BB002FF952 /* FormItemCell.h */,
+				75147BAE191961BB002FF952 /* FormItemCell.m */,
+				75147BB01919628B002FF952 /* FormItemPlainTextCell.h */,
+				75147BB11919628B002FF952 /* FormItemPlainTextCell.m */,
+				75147BC319196530002FF952 /* PlainTextCell.xib */,
+				75147BB31919629D002FF952 /* FormItemListCell.h */,
+				75147BB41919629D002FF952 /* FormItemListCell.m */,
+				75147BC51919653A002FF952 /* ListCell.xib */,
+				75147BB6191962A9002FF952 /* FormItemPhotoCell.h */,
+				75147BB7191962A9002FF952 /* FormItemPhotoCell.m */,
+				75147BC719196542002FF952 /* PhotoCell.xib */,
+				7593E17E191AA08800DA6571 /* FormItemTextFieldCell.h */,
+				7593E17F191AA08800DA6571 /* FormItemTextFieldCell.m */,
+				7593E183191AA27400DA6571 /* TextFieldCell.xib */,
+				75147BB9191962C6002FF952 /* FormItemTextViewCell.h */,
+				75147BBA191962C6002FF952 /* FormItemTextViewCell.m */,
+				75147BC919196553002FF952 /* TextViewCell.xib */,
+				75147BBC191962DF002FF952 /* FormItemSwitchCell.h */,
+				75147BBD191962DF002FF952 /* FormItemSwitchCell.m */,
+				75147BCB1919656A002FF952 /* SwitchCell.xib */,
+				75147BBF191962EE002FF952 /* FormItemSliderCell.h */,
+				75147BC0191962EE002FF952 /* FormItemSliderCell.m */,
+				75147BCD19196578002FF952 /* SliderCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -172,6 +251,10 @@
 		75215B50191916D800417D56 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				75215B5B19193C8900417D56 /* FormItemsManager.h */,
+				75215B5C19193C8900417D56 /* FormItemsManager.m */,
+				75215B5E19193D6100417D56 /* FormItem.h */,
+				75215B5F19193D6100417D56 /* FormItem.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -252,7 +335,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				75215B29191916A800417D56 /* InfoPlist.strings in Resources */,
+				75147BC61919653A002FF952 /* ListCell.xib in Resources */,
+				7593E184191AA27400DA6571 /* TextFieldCell.xib in Resources */,
+				75147BCE19196578002FF952 /* SliderCell.xib in Resources */,
 				75215B31191916A800417D56 /* Images.xcassets in Resources */,
+				75147BC419196530002FF952 /* PlainTextCell.xib in Resources */,
+				75147BC819196542002FF952 /* PhotoCell.xib in Resources */,
+				75147BCC1919656A002FF952 /* SwitchCell.xib in Resources */,
+				75147BCA19196553002FF952 /* TextViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,8 +361,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75147BB51919629D002FF952 /* FormItemListCell.m in Sources */,
+				75215B591919373600417D56 /* StartupViewController.m in Sources */,
 				75215B2F191916A800417D56 /* AppDelegate.m in Sources */,
+				75147BBB191962C6002FF952 /* FormItemTextViewCell.m in Sources */,
+				75147BBE191962DF002FF952 /* FormItemSwitchCell.m in Sources */,
+				75147BB8191962A9002FF952 /* FormItemPhotoCell.m in Sources */,
+				75215B6019193D6100417D56 /* FormItem.m in Sources */,
+				75147BC1191962EE002FF952 /* FormItemSliderCell.m in Sources */,
+				75147BAF191961BB002FF952 /* FormItemCell.m in Sources */,
 				75215B2B191916A800417D56 /* main.m in Sources */,
+				7593E180191AA08800DA6571 /* FormItemTextFieldCell.m in Sources */,
+				75215B551919343600417D56 /* FormItemsTableViewController.m in Sources */,
+				75147BB21919628B002FF952 /* FormItemPlainTextCell.m in Sources */,
+				75215B5D19193C8900417D56 /* FormItemsManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +571,7 @@
 				75215B49191916A800417D56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		75215B4A191916A800417D56 /* Build configuration list for PBXNativeTarget "DynamicFeedbackFormTests" */ = {
 			isa = XCConfigurationList;
@@ -477,6 +580,7 @@
 				75215B4C191916A800417D56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
