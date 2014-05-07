@@ -38,6 +38,10 @@
 		75215B6019193D6100417D56 /* FormItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 75215B5F19193D6100417D56 /* FormItem.m */; };
 		7593E180191AA08800DA6571 /* FormItemTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7593E17F191AA08800DA6571 /* FormItemTextFieldCell.m */; };
 		7593E184191AA27400DA6571 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7593E183191AA27400DA6571 /* TextFieldCell.xib */; };
+		79326009191AD42B0051D6F7 /* RESTService.m in Sources */ = {isa = PBXBuildFile; fileRef = 79326008191AD42B0051D6F7 /* RESTService.m */; };
+		7932600A191AD42B0051D6F7 /* RESTService.m in Sources */ = {isa = PBXBuildFile; fileRef = 79326008191AD42B0051D6F7 /* RESTService.m */; };
+		7932600E191AD88F0051D6F7 /* NSDictionary+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7932600D191AD88F0051D6F7 /* NSDictionary+JSON.m */; };
+		7932600F191AD88F0051D6F7 /* NSDictionary+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7932600D191AD88F0051D6F7 /* NSDictionary+JSON.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +103,10 @@
 		7593E17E191AA08800DA6571 /* FormItemTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormItemTextFieldCell.h; sourceTree = "<group>"; };
 		7593E17F191AA08800DA6571 /* FormItemTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormItemTextFieldCell.m; sourceTree = "<group>"; };
 		7593E183191AA27400DA6571 /* TextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
+		79326007191AD42B0051D6F7 /* RESTService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESTService.h; sourceTree = "<group>"; };
+		79326008191AD42B0051D6F7 /* RESTService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESTService.m; sourceTree = "<group>"; };
+		7932600C191AD88F0051D6F7 /* NSDictionary+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JSON.h"; sourceTree = "<group>"; };
+		7932600D191AD88F0051D6F7 /* NSDictionary+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JSON.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +170,7 @@
 				75215B50191916D800417D56 /* Model */,
 				75215B4F191916D600417D56 /* View */,
 				75215B4E191916D400417D56 /* Controller */,
+				7932600B191AD8720051D6F7 /* Categories */,
 				75215B30191916A800417D56 /* Images.xcassets */,
 				75215B25191916A800417D56 /* Supporting Files */,
 			);
@@ -213,6 +222,8 @@
 				75215B571919373600417D56 /* StartupViewController.m */,
 				75215B531919343600417D56 /* FormItemsTableViewController.h */,
 				75215B541919343600417D56 /* FormItemsTableViewController.m */,
+				79326007191AD42B0051D6F7 /* RESTService.h */,
+				79326008191AD42B0051D6F7 /* RESTService.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -257,6 +268,15 @@
 				75215B5F19193D6100417D56 /* FormItem.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		7932600B191AD8720051D6F7 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				7932600C191AD88F0051D6F7 /* NSDictionary+JSON.h */,
+				7932600D191AD88F0051D6F7 /* NSDictionary+JSON.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,9 +391,11 @@
 				75147BC1191962EE002FF952 /* FormItemSliderCell.m in Sources */,
 				75147BAF191961BB002FF952 /* FormItemCell.m in Sources */,
 				75215B2B191916A800417D56 /* main.m in Sources */,
+				7932600E191AD88F0051D6F7 /* NSDictionary+JSON.m in Sources */,
 				7593E180191AA08800DA6571 /* FormItemTextFieldCell.m in Sources */,
 				75215B551919343600417D56 /* FormItemsTableViewController.m in Sources */,
 				75147BB21919628B002FF952 /* FormItemPlainTextCell.m in Sources */,
+				79326009191AD42B0051D6F7 /* RESTService.m in Sources */,
 				75215B5D19193C8900417D56 /* FormItemsManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,6 +405,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				75215B44191916A800417D56 /* DynamicFeedbackFormTests.m in Sources */,
+				7932600A191AD42B0051D6F7 /* RESTService.m in Sources */,
+				7932600F191AD88F0051D6F7 /* NSDictionary+JSON.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
