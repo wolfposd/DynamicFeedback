@@ -14,8 +14,14 @@ static NSString * const KeyFormPageElements = @"elements";
 
 static NSString * const KeyFormItemID = @"id";
 static NSString * const KeyFormItemType = @"type";
+static NSString * const KeyFormItemTitle = @"title";
 static NSString * const KeyFormItemDescription = @"text";
 static NSString * const KeyFormItemElements = @"elements";
+static NSString * const KeyFormItemCharacterLimit = @"length";
+
+static NSString * const KeyFormItemMinValue = @"min";
+static NSString * const KeyFormItemMaxValue = @"max";
+static NSString * const KeyFormItemStepValue = @"step";
 
 @interface FormItemsManager ()
 
@@ -64,9 +70,18 @@ static NSString * const KeyFormItemElements = @"elements";
         NSMutableArray *newFormItemsArray = [NSMutableArray new];
         for (NSDictionary *formItemDictionary in formPageDictionary[KeyFormPageElements]) {
             newFormItem = [[FormItem alloc] initWithID:formItemDictionary[KeyFormItemID]
-                                                     type:[self formItemTypeFromString:formItemDictionary[KeyFormItemType]]
-                                              description:formItemDictionary[KeyFormItemDescription]
-                                                 elements:formItemDictionary[KeyFormItemElements]];
+                                                  type:[self formItemTypeFromString:formItemDictionary[KeyFormItemType]]
+                                                 title:formItemDictionary[KeyFormItemTitle]
+                                           description:formItemDictionary[KeyFormItemDescription]
+                                              elements:formItemDictionary[KeyFormItemElements]
+                                        characterLimit:[formItemDictionary[KeyFormItemCharacterLimit] integerValue]];
+            
+            if (newFormItem.type == FormItemTypeSlider) {
+                [newFormItem setSliderMinValue:[formItemDictionary[KeyFormItemMinValue] integerValue]
+                                      maxValue:[formItemDictionary[KeyFormItemMaxValue] integerValue]
+                                     stepValue:[formItemDictionary[KeyFormItemStepValue] integerValue]];
+            }
+            
             [newFormItemsArray addObject:newFormItem];
         }
         
@@ -81,14 +96,24 @@ static NSString * const KeyFormItemElements = @"elements";
 #pragma mark - Helper methods
 
 - (FormItemType)formItemTypeFromString:(NSString *)string {
+    // Visible Modules
     if ([string isEqualToString:@"list"]) return FormItemTypeList;
-    if ([string isEqualToString:@"photo"]) return FormItemTypePhoto;
-#warning textfield shouldn't be textview in general (Just for now)
-    if ([string isEqualToString:@"textfield"]) return FormItemTypeTextView; //return FormItemTypeTextField;
-    if ([string isEqualToString:@"textview"]) return FormItemTypeTextView;
-    if ([string isEqualToString:@"switch"]) return FormItemTypeSwitch;
+    if ([string isEqualToString:@"long-list"]) return FormItemTypeLongList;
+    if ([string isEqualToString:@"textfield"]) return FormItemTypeTextField;
+    if ([string isEqualToString:@"textarea"]) return FormItemTypeTextView;
+    if ([string isEqualToString:@"checkbox"]) return FormItemTypeSwitch;
     if ([string isEqualToString:@"slider"]) return FormItemTypeSlider;
-    return FormItemTypePlainText;
+    if ([string isEqualToString:@"star"]) return FormItemTypeStarRating;
+    if ([string isEqualToString:@"date"]) return FormItemTypeDatePicker;
+    if ([string isEqualToString:@"photo"]) return FormItemTypePhoto;
+    if ([string isEqualToString:@"tos"]) return FormItemTypeTermsOfService;
+    
+    // Invisible Modules
+    if ([string isEqualToString:@"gps"]) return FormItemTypeGPS;
+    if ([string isEqualToString:@"accelerometer"]) return FormItemTypeAccelerometer;
+    if ([string isEqualToString:@"auto-date"]) return FormItemTypeTimeStamp;
+    
+    return -1; // Error
 }
 
 @end

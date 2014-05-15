@@ -9,22 +9,40 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSUInteger, FormItemType) {
-    FormItemTypePlainText,
+    // Visible Modules
     FormItemTypeList,
-    FormItemTypePhoto,
+    FormItemTypeLongList,
     FormItemTypeTextField,
     FormItemTypeTextView,
     FormItemTypeSwitch,
-    FormItemTypeSlider
+    FormItemTypeSlider,
+    FormItemTypeStarRating,
+    FormItemTypeDatePicker,
+    FormItemTypePhoto,
+    FormItemTypeTermsOfService,
+    
+    // Invisible Modules
+    FormItemTypeGPS,
+    FormItemTypeAccelerometer,
+    FormItemTypeTimeStamp
 };
 
 @interface FormItem : NSObject
 
 @property (nonatomic, readonly) NSString *ID;
 @property (nonatomic, readonly) FormItemType type;
+@property (nonatomic, readonly) NSString *title;
 @property (nonatomic, readonly) NSString *description;
 @property (nonatomic, readonly) NSArray *elements;
+@property (nonatomic, readonly) NSUInteger characterLimit; // 0 = no limit
 
-- (instancetype)initWithID:(NSString *)aID type:(FormItemType)aType description:(NSString *)aDescription elements:(NSArray *)elements;
+- (instancetype)initWithID:(NSString *)aID type:(FormItemType)aType title:(NSString *)aTitle description:(NSString *)aDescription  elements:(NSArray *)elements characterLimit:(NSUInteger)aCharacterLimit;
+
+// Slider module
+@property (nonatomic, readonly) double minValue;
+@property (nonatomic, readonly) double maxValue;
+@property (nonatomic, readonly) double stepValue;
+
+- (void)setSliderMinValue:(double)min maxValue:(double)max stepValue:(double)step;
 
 @end
