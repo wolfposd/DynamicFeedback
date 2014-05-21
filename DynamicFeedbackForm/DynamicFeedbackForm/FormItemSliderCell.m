@@ -19,7 +19,20 @@
 - (void)setFormItem:(FormItem *)formItem {
     [super setFormItem:formItem];
     self.descriptionLabel.text = formItem.description;
+    
+    // Set slider properties
+    self.slider.minimumValue = self.formItem.minValue;
+    self.slider.maximumValue = self.formItem.maxValue;
+    self.slider.value = 0.0;
 }
+
+#pragma mark - IBActions
+
+- (IBAction)movedSlider:(UISlider *)sender {
+    float newStep = roundf((sender.value) / self.formItem.stepValue);
+    self.slider.value = newStep * self.formItem.stepValue;
+}
+
 
 /*
 // Only override drawRect: if you perform custom drawing.

@@ -18,9 +18,9 @@
 @property (nonatomic) NSUInteger characterLsimit; // 0 = no limit
 
 //Slider module
-@property (nonatomic) double minValue;
-@property (nonatomic) double maxValue;
-@property (nonatomic) double stepValue;
+@property (nonatomic) float minValue;
+@property (nonatomic) float maxValue;
+@property (nonatomic) float stepValue;
 
 @end
 
@@ -41,7 +41,7 @@
 }
 
 // Slider module
-- (void)setSliderMinValue:(double)min maxValue:(double)max stepValue:(double)step {
+- (void)setSliderMinValue:(float)min maxValue:(float)max stepValue:(float)step {
     self.minValue = min;
     self.maxValue = max;
     self.stepValue = step;

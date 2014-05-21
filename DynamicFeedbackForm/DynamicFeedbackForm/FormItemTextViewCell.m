@@ -8,9 +8,10 @@
 
 #import "FormItemTextViewCell.h"
 
-@interface FormItemTextViewCell ()
+@interface FormItemTextViewCell () <UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *remainingCharactersLabel;
 
 @end
 
@@ -34,6 +35,19 @@
 
 - (void)toolbarButtonPressed {
     [self.textView resignFirstResponder];
+}
+
+#pragma mark - UITextViewDelegate
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    NSUInteger newLength = [textView.text length] + [text length] - range.length;
+    BOOL shouldChange = (newLength > self.formItem.characterLimit) ? NO : YES;
+    
+    if (shouldChange) {
+        self.remainingCharactersLabel.text = [NSString stringWithFormat:@"Remaining characters: %lu", (unsigned long)newLength];
+    }
+    
+    return shouldChange;
 }
 
 /*

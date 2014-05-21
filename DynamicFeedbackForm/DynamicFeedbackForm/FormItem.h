@@ -39,10 +39,10 @@ typedef NS_ENUM(NSUInteger, FormItemType) {
 - (instancetype)initWithID:(NSString *)aID type:(FormItemType)aType title:(NSString *)aTitle description:(NSString *)aDescription  elements:(NSArray *)elements characterLimit:(NSUInteger)aCharacterLimit;
 
 // Slider module
-@property (nonatomic, readonly) double minValue;
-@property (nonatomic, readonly) double maxValue;
-@property (nonatomic, readonly) double stepValue;
+@property (nonatomic, readonly) float minValue;
+@property (nonatomic, readonly) float maxValue;
+@property (nonatomic, readonly) float stepValue;
 
-- (void)setSliderMinValue:(double)min maxValue:(double)max stepValue:(double)step;
+- (void)setSliderMinValue:(float)min maxValue:(float)max stepValue:(float)step;
 
 @end

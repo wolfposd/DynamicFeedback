@@ -8,13 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		75147BAF191961BB002FF952 /* FormItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75147BAE191961BB002FF952 /* FormItemCell.m */; };
-		75147BB21919628B002FF952 /* FormItemPlainTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75147BB11919628B002FF952 /* FormItemPlainTextCell.m */; };
 		75147BB51919629D002FF952 /* FormItemListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75147BB41919629D002FF952 /* FormItemListCell.m */; };
 		75147BB8191962A9002FF952 /* FormItemPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75147BB7191962A9002FF952 /* FormItemPhotoCell.m */; };
 		75147BBB191962C6002FF952 /* FormItemTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75147BBA191962C6002FF952 /* FormItemTextViewCell.m */; };
 		75147BBE191962DF002FF952 /* FormItemSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75147BBD191962DF002FF952 /* FormItemSwitchCell.m */; };
 		75147BC1191962EE002FF952 /* FormItemSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75147BC0191962EE002FF952 /* FormItemSliderCell.m */; };
-		75147BC419196530002FF952 /* PlainTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75147BC319196530002FF952 /* PlainTextCell.xib */; };
 		75147BC61919653A002FF952 /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75147BC51919653A002FF952 /* ListCell.xib */; };
 		75147BC819196542002FF952 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75147BC719196542002FF952 /* PhotoCell.xib */; };
 		75147BCA19196553002FF952 /* TextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75147BC919196553002FF952 /* TextViewCell.xib */; };
@@ -36,8 +34,12 @@
 		75215B591919373600417D56 /* StartupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75215B571919373600417D56 /* StartupViewController.m */; };
 		75215B5D19193C8900417D56 /* FormItemsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 75215B5C19193C8900417D56 /* FormItemsManager.m */; };
 		75215B6019193D6100417D56 /* FormItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 75215B5F19193D6100417D56 /* FormItem.m */; };
+		7535AD341924B8DE00B0C674 /* FormItemLongListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7535AD331924B8DE00B0C674 /* FormItemLongListCell.m */; };
+		7535AD361924B8EE00B0C674 /* LongListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7535AD351924B8EE00B0C674 /* LongListCell.xib */; };
 		7593E180191AA08800DA6571 /* FormItemTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7593E17F191AA08800DA6571 /* FormItemTextFieldCell.m */; };
 		7593E184191AA27400DA6571 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7593E183191AA27400DA6571 /* TextFieldCell.xib */; };
+		75FCFE5D192B3AEB00D046F7 /* FormItemStarRatingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FCFE5C192B3AEB00D046F7 /* FormItemStarRatingCell.m */; };
+		75FCFE5F192B3B0A00D046F7 /* StarRatingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75FCFE5E192B3B0A00D046F7 /* StarRatingCell.xib */; };
 		79326009191AD42B0051D6F7 /* RESTService.m in Sources */ = {isa = PBXBuildFile; fileRef = 79326008191AD42B0051D6F7 /* RESTService.m */; };
 		7932600A191AD42B0051D6F7 /* RESTService.m in Sources */ = {isa = PBXBuildFile; fileRef = 79326008191AD42B0051D6F7 /* RESTService.m */; };
 		7932600E191AD88F0051D6F7 /* NSDictionary+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7932600D191AD88F0051D6F7 /* NSDictionary+JSON.m */; };
@@ -57,8 +59,6 @@
 /* Begin PBXFileReference section */
 		75147BAD191961BB002FF952 /* FormItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormItemCell.h; sourceTree = "<group>"; };
 		75147BAE191961BB002FF952 /* FormItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormItemCell.m; sourceTree = "<group>"; };
-		75147BB01919628B002FF952 /* FormItemPlainTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormItemPlainTextCell.h; sourceTree = "<group>"; };
-		75147BB11919628B002FF952 /* FormItemPlainTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormItemPlainTextCell.m; sourceTree = "<group>"; };
 		75147BB31919629D002FF952 /* FormItemListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormItemListCell.h; sourceTree = "<group>"; };
 		75147BB41919629D002FF952 /* FormItemListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormItemListCell.m; sourceTree = "<group>"; };
 		75147BB6191962A9002FF952 /* FormItemPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormItemPhotoCell.h; sourceTree = "<group>"; };
@@ -70,7 +70,6 @@
 		75147BBF191962EE002FF952 /* FormItemSliderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormItemSliderCell.h; sourceTree = "<group>"; };
 		75147BC0191962EE002FF952 /* FormItemSliderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormItemSliderCell.m; sourceTree = "<group>"; };
 		75147BC219196354002FF952 /* FormItemCells.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FormItemCells.h; sourceTree = "<group>"; };
-		75147BC319196530002FF952 /* PlainTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlainTextCell.xib; sourceTree = "<group>"; };
 		75147BC51919653A002FF952 /* ListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
 		75147BC719196542002FF952 /* PhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
 		75147BC919196553002FF952 /* TextViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewCell.xib; sourceTree = "<group>"; };
@@ -100,9 +99,15 @@
 		75215B5C19193C8900417D56 /* FormItemsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormItemsManager.m; sourceTree = "<group>"; };
 		75215B5E19193D6100417D56 /* FormItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormItem.h; sourceTree = "<group>"; };
 		75215B5F19193D6100417D56 /* FormItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormItem.m; sourceTree = "<group>"; };
+		7535AD321924B8DE00B0C674 /* FormItemLongListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormItemLongListCell.h; sourceTree = "<group>"; };
+		7535AD331924B8DE00B0C674 /* FormItemLongListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormItemLongListCell.m; sourceTree = "<group>"; };
+		7535AD351924B8EE00B0C674 /* LongListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LongListCell.xib; sourceTree = "<group>"; };
 		7593E17E191AA08800DA6571 /* FormItemTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormItemTextFieldCell.h; sourceTree = "<group>"; };
 		7593E17F191AA08800DA6571 /* FormItemTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormItemTextFieldCell.m; sourceTree = "<group>"; };
 		7593E183191AA27400DA6571 /* TextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
+		75FCFE5B192B3AEB00D046F7 /* FormItemStarRatingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormItemStarRatingCell.h; sourceTree = "<group>"; };
+		75FCFE5C192B3AEB00D046F7 /* FormItemStarRatingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormItemStarRatingCell.m; sourceTree = "<group>"; };
+		75FCFE5E192B3B0A00D046F7 /* StarRatingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StarRatingCell.xib; sourceTree = "<group>"; };
 		79326007191AD42B0051D6F7 /* RESTService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESTService.h; sourceTree = "<group>"; };
 		79326008191AD42B0051D6F7 /* RESTService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESTService.m; sourceTree = "<group>"; };
 		7932600C191AD88F0051D6F7 /* NSDictionary+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JSON.h"; sourceTree = "<group>"; };
@@ -234,15 +239,12 @@
 				75147BC219196354002FF952 /* FormItemCells.h */,
 				75147BAD191961BB002FF952 /* FormItemCell.h */,
 				75147BAE191961BB002FF952 /* FormItemCell.m */,
-				75147BB01919628B002FF952 /* FormItemPlainTextCell.h */,
-				75147BB11919628B002FF952 /* FormItemPlainTextCell.m */,
-				75147BC319196530002FF952 /* PlainTextCell.xib */,
 				75147BB31919629D002FF952 /* FormItemListCell.h */,
 				75147BB41919629D002FF952 /* FormItemListCell.m */,
 				75147BC51919653A002FF952 /* ListCell.xib */,
-				75147BB6191962A9002FF952 /* FormItemPhotoCell.h */,
-				75147BB7191962A9002FF952 /* FormItemPhotoCell.m */,
-				75147BC719196542002FF952 /* PhotoCell.xib */,
+				7535AD321924B8DE00B0C674 /* FormItemLongListCell.h */,
+				7535AD331924B8DE00B0C674 /* FormItemLongListCell.m */,
+				7535AD351924B8EE00B0C674 /* LongListCell.xib */,
 				7593E17E191AA08800DA6571 /* FormItemTextFieldCell.h */,
 				7593E17F191AA08800DA6571 /* FormItemTextFieldCell.m */,
 				7593E183191AA27400DA6571 /* TextFieldCell.xib */,
@@ -255,6 +257,12 @@
 				75147BBF191962EE002FF952 /* FormItemSliderCell.h */,
 				75147BC0191962EE002FF952 /* FormItemSliderCell.m */,
 				75147BCD19196578002FF952 /* SliderCell.xib */,
+				75FCFE5B192B3AEB00D046F7 /* FormItemStarRatingCell.h */,
+				75FCFE5C192B3AEB00D046F7 /* FormItemStarRatingCell.m */,
+				75FCFE5E192B3B0A00D046F7 /* StarRatingCell.xib */,
+				75147BB6191962A9002FF952 /* FormItemPhotoCell.h */,
+				75147BB7191962A9002FF952 /* FormItemPhotoCell.m */,
+				75147BC719196542002FF952 /* PhotoCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -356,10 +364,11 @@
 			files = (
 				75215B29191916A800417D56 /* InfoPlist.strings in Resources */,
 				75147BC61919653A002FF952 /* ListCell.xib in Resources */,
+				75FCFE5F192B3B0A00D046F7 /* StarRatingCell.xib in Resources */,
 				7593E184191AA27400DA6571 /* TextFieldCell.xib in Resources */,
+				7535AD361924B8EE00B0C674 /* LongListCell.xib in Resources */,
 				75147BCE19196578002FF952 /* SliderCell.xib in Resources */,
 				75215B31191916A800417D56 /* Images.xcassets in Resources */,
-				75147BC419196530002FF952 /* PlainTextCell.xib in Resources */,
 				75147BC819196542002FF952 /* PhotoCell.xib in Resources */,
 				75147BCC1919656A002FF952 /* SwitchCell.xib in Resources */,
 				75147BCA19196553002FF952 /* TextViewCell.xib in Resources */,
@@ -381,10 +390,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7535AD341924B8DE00B0C674 /* FormItemLongListCell.m in Sources */,
 				75147BB51919629D002FF952 /* FormItemListCell.m in Sources */,
 				75215B591919373600417D56 /* StartupViewController.m in Sources */,
 				75215B2F191916A800417D56 /* AppDelegate.m in Sources */,
 				75147BBB191962C6002FF952 /* FormItemTextViewCell.m in Sources */,
+				75FCFE5D192B3AEB00D046F7 /* FormItemStarRatingCell.m in Sources */,
 				75147BBE191962DF002FF952 /* FormItemSwitchCell.m in Sources */,
 				75147BB8191962A9002FF952 /* FormItemPhotoCell.m in Sources */,
 				75215B6019193D6100417D56 /* FormItem.m in Sources */,
@@ -394,7 +405,6 @@
 				7932600E191AD88F0051D6F7 /* NSDictionary+JSON.m in Sources */,
 				7593E180191AA08800DA6571 /* FormItemTextFieldCell.m in Sources */,
 				75215B551919343600417D56 /* FormItemsTableViewController.m in Sources */,
-				75147BB21919628B002FF952 /* FormItemPlainTextCell.m in Sources */,
 				79326009191AD42B0051D6F7 /* RESTService.m in Sources */,
 				75215B5D19193C8900417D56 /* FormItemsManager.m in Sources */,
 			);

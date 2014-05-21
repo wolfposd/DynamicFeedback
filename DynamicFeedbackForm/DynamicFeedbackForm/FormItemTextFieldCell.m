@@ -8,11 +8,32 @@
 
 #import "FormItemTextFieldCell.h"
 
+@interface FormItemTextFieldCell () <UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *remainingCharactersLabel;
+
+@end
+
 @implementation FormItemTextFieldCell
 
 - (void)setFormItem:(FormItem *)formItem {
     [super setFormItem:formItem];
-    self.textField.placeholder = formItem.description;
+    self.descriptionLabel.text = formItem.description;
+}
+
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    NSUInteger newLength = [textField.text length] + [string length] - range.length;
+    BOOL shouldChange = (newLength > self.formItem.characterLimit) ? NO : YES;
+    
+    if (shouldChange) {
+        self.remainingCharactersLabel.text = [NSString stringWithFormat:@"Remaining characters: %lu", (unsigned long)newLength];
+    }
+    
+    return shouldChange;
 }
 
 /*
