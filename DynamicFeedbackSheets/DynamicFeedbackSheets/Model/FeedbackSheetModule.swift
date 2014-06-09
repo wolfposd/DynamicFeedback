@@ -28,11 +28,34 @@ enum FeedbackSheetModuleType: String {
 }
 
 class FeedbackSheetModule {
+    // MARK: Properties
+
     let type: FeedbackSheetModuleType
     let ID: String
     
+    var isInvisible: Bool {
+    get {
+        switch type {
+        case .GPS, .Accelerometer, .TimeStamp:
+            return true
+        default:
+            return false
+        }
+    }
+    }
+    
     // Response Data
-    var response: (key: String, value: Any)?
+    var responseData: Any?
+    
+    var response: (key: String, value: Any)? {
+    if responseData {
+        return (ID, responseData)
+    } else {
+        return nil
+        }
+    }
+    
+    // MARK: Init
     
     init(moduleType: FeedbackSheetModuleType, ID: String) {
         type = moduleType

@@ -9,7 +9,11 @@
 import UIKit
 
 class TextModule: DescriptionModule {
+    // MARK: Properties
+
     let characterLimit = 140
+    
+    // MARK: Init
     
     init(moduleType: FeedbackSheetModuleType, ID: String, text: String?, characterLimit: Int?) {
         if characterLimit {

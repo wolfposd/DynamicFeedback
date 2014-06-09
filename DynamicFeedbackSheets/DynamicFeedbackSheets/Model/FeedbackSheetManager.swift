@@ -15,12 +15,18 @@ protocol FeedbackSheetManagerDelegate {
 }
 
 class FeedbackSheetManager {
+    // MARK: Properties
+    
     var baseURL: String
     var delegate: FeedbackSheetManagerDelegate?
+    
+    // MARK: Init
     
     init(baseURL: String) {
         self.baseURL = baseURL
     }
+    
+    // MARK: Public API
     
     func startFetchingSheetWithID(sheetID: String) {
         let fetchURL = NSURL(string: "\(baseURL)sheet/id/\(sheetID)")
@@ -28,19 +34,22 @@ class FeedbackSheetManager {
         request.HTTPMethod = "GET"
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue()) {
-                response, data, error in
+            response, data, error in
             if error {
                 self.delegate?.feedbackSheetManager(self, didFailWithError: error)
             } else {
-                if let jsonData = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? Dictionary<String, Any> {
+                if let jsonData = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? NSDictionary {
+                    
+                    println(jsonData)
+                    
                     if let sheet = self.feedbackSheetFromDictionary(jsonData) {
                         self.delegate?.feedbackSheetManager(self, didFinishFetchingSheet: sheet)
                     } else {
-                        let sheetCreationError = NSError(domain: nil, code: -1, userInfo: [NSLocalizedDescriptionKey : "Couldn't create Feedback Sheet", NSLocalizedFailureReasonErrorKey : "No title or no ID or no modules"])
+                        let sheetCreationError = NSError(domain: "FeedbackSheetManager Error", code: -1, userInfo: [NSLocalizedDescriptionKey : "Couldn't create Feedback Sheet", NSLocalizedFailureReasonErrorKey : "No title or no ID or no modules"])
                         self.delegate?.feedbackSheetManager(self, didFailWithError: sheetCreationError)
                     }
                 } else {
-                    let jsonDataError = NSError(domain: nil, code: -1, userInfo: [NSLocalizedDescriptionKey : "Couldn't create JSONDictionary", NSLocalizedFailureReasonErrorKey : "No server response data"])
+                    let jsonDataError = NSError(domain: "FeedbackSheetManager Error", code: -1, userInfo: [NSLocalizedDescriptionKey : "Couldn't create JSONDictionary", NSLocalizedFailureReasonErrorKey : "No server response data"])
                     self.delegate?.feedbackSheetManager(self, didFailWithError: jsonDataError)
                 }
             }
@@ -48,7 +57,7 @@ class FeedbackSheetManager {
         }
     }
     
-    func postSheetWithID(sheetID: Int, responses: Dictionary<String, Any>) {
+    func postSheetWithID(sheetID: Int, responses: NSDictionary) {
         
         let fetchURL = NSURL(string: "\(baseURL)sheet/id/\(sheetID)")
         let request = NSMutableURLRequest(URL: fetchURL)
@@ -56,7 +65,7 @@ class FeedbackSheetManager {
         
         var error: NSError?
         let jsonData = NSJSONSerialization.dataWithJSONObject(responses, options: nil, error: &error)
-
+        
         request.HTTPBody = jsonData
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue()) {
@@ -69,9 +78,14 @@ class FeedbackSheetManager {
         }
     }
     
-    func feedbackSheetFromDictionary(dict: Dictionary<String, Any>) -> FeedbackSheet? {
+    // MARK: FeedbackSheet Construction Methods
+    
+    func feedbackSheetFromDictionary(dict: NSDictionary) -> FeedbackSheet? {
+        println("start construction of sheet")
         let title = dict["title"] as? String
         let ID = dict["id"] as? Int
+        
+        println("title: \(title) id: \(ID)")
         
         if !(title && ID) {
             return nil
@@ -79,7 +93,7 @@ class FeedbackSheetManager {
         
         var pages = FeedbackSheetPage[]()
         
-        if let pagesArray = dict["pages"] as? Array<Dictionary<String, Any>> {
+        if let pagesArray = dict["pages"] as? Array<NSDictionary> {
             for pageDict in pagesArray {
                 if let page = feedbackSheetPageFromDictionary(pageDict) {
                     pages += page
@@ -94,26 +108,32 @@ class FeedbackSheetManager {
         }
     }
     
-    func feedbackSheetPageFromDictionary(dict: Dictionary<String, Any>) -> FeedbackSheetPage? {
+    func feedbackSheetPageFromDictionary(dict: NSDictionary) -> FeedbackSheetPage? {
         let title = dict["title"] as? String
-        var modules = FeedbackSheetModule[]()
+        var modulesVisible = FeedbackSheetModule[]()
+        var modulesInvisible = FeedbackSheetModule[]()
         
-        if let modulesArray = dict["elements"] as? Array<Dictionary<String, Any>> {
+        
+        if let modulesArray = dict["elements"] as? Array<NSDictionary> {
             for moduleDict in modulesArray {
                 if let module = feedbackSheetModuleFromDictionary(moduleDict) {
-                    modules += module
+                    if module.isInvisible {
+                        modulesInvisible += module
+                    } else {
+                        modulesVisible += module
+                    }
                 }
             }
         }
         
-        if modules.count > 0 {
-            return FeedbackSheetPage(title: title, modules: modules)
+        if modulesVisible.count > 0 {
+            return FeedbackSheetPage(title: title, modulesVisible: modulesVisible, modulesInvisible: modulesInvisible)
         } else {
             return nil
         }
     }
     
-    func feedbackSheetModuleFromDictionary(dict: Dictionary<String, Any>) -> FeedbackSheetModule? {
+    func feedbackSheetModuleFromDictionary(dict: NSDictionary) -> FeedbackSheetModule? {
         var type:FeedbackSheetModuleType?
         
         if let typeString = dict["type"] as? String {
@@ -144,6 +164,8 @@ class FeedbackSheetManager {
             module = TextModule(moduleType: type!, ID: ID!, text: text, characterLimit: length)
         case .Checkbox, .StarRating, .Date, .Photo:
             module = DescriptionModule(moduleType: type!, ID: ID!, text: text)
+        case .Slider:
+            module = SliderModule(moduleType: type!, ID: ID!, text: text, minValue: min, maxValue: max, stepValue: step)
         case .ToS:
             module = ToSModule(moduleType: type!, ID: ID!, text: text, title: title)
         case .GPS, .Accelerometer, .TimeStamp:

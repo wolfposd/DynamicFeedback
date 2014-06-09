@@ -9,13 +9,19 @@
 import Foundation
 
 class FeedbackSheetPage {
-    let title = "No Title"
-    let modules: FeedbackSheetModule[]
+    // MARK: Properties
     
-    init(title: String?, modules: FeedbackSheetModule[]) {
+    let title = "No Title"
+    let modulesVisible: FeedbackSheetModule[]
+    let modulesInvisible: FeedbackSheetModule[]
+    
+    // MARK: Init
+    
+    init(title: String?, modulesVisible: FeedbackSheetModule[], modulesInvisible: FeedbackSheetModule[]) {
         if title {
             self.title = title!
         }
-        self.modules = modules
+        self.modulesVisible = modulesVisible
+        self.modulesInvisible = modulesInvisible
     }
 }

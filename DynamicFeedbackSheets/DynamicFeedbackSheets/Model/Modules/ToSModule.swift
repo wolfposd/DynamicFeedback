@@ -9,7 +9,11 @@
 import UIKit
 
 class ToSModule: DescriptionModule {
+    // MARK: Properties
+    
     let title = "No Title"
+    
+    // MARK: Init
     
     init(moduleType: FeedbackSheetModuleType, ID: String, text: String?, title: String?) {
         if title {

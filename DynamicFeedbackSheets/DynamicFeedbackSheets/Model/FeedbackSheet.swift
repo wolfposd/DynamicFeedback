@@ -9,11 +9,15 @@
 import Foundation
 
 class FeedbackSheet {
+    // MARK: Properties
+
     let title = "No Title"
     let ID: Int
     let pages: FeedbackSheetPage[]
     let fetchDate = NSDate()
     
+    // MARK: Init
+
     init(title: String, ID: Int, pages: FeedbackSheetPage[]) {
         self.title = title
         self.ID = ID

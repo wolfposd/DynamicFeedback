@@ -9,9 +9,13 @@
 import UIKit
 
 class SliderModule: DescriptionModule {
+    // MARK: Properties
+    
     let minValue = 0.0
     let maxValue = 1.0
     let stepValue = 0.2
+    
+    // MARK: Init
     
     init(moduleType: FeedbackSheetModuleType, ID: String, text: String?, minValue: Double?, maxValue: Double?, stepValue: Double?) {
         if minValue {
