@@ -15,7 +15,7 @@ protocol FeedbackSheetManagerDelegate {
 }
 
 class FeedbackSheetManager {
-    let baseURL: String
+    var baseURL: String
     var delegate: FeedbackSheetManagerDelegate?
     
     init(baseURL: String) {
