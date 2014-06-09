@@ -9,10 +9,12 @@
 import UIKit
 
 class ListModule: DescriptionModule {
-    let elements: String[]
+    let elements = String[]()
     
-    init(moduleType: FeedbackSheetModuleType, ID: Int, text: String, elements: String[]) {
-        self.elements = elements
+    init(moduleType: FeedbackSheetModuleType, ID: String, text: String?, elements: String[]?) {
+        if elements {
+            self.elements = elements!
+        }
         super.init(moduleType: moduleType, ID: ID, text: text)
     }
 }

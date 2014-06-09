@@ -29,12 +29,12 @@ enum FeedbackSheetModuleType: String {
 
 class FeedbackSheetModule {
     let type: FeedbackSheetModuleType
-    let ID: Int
+    let ID: String
     
     // Response Data
     var response: (key: String, value: Any)?
     
-    init(moduleType: FeedbackSheetModuleType, ID: Int) {
+    init(moduleType: FeedbackSheetModuleType, ID: String) {
         type = moduleType
         self.ID = ID
     }

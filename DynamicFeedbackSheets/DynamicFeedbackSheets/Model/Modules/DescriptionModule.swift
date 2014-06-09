@@ -9,10 +9,12 @@
 import UIKit
 
 class DescriptionModule: FeedbackSheetModule {
-    let text: String
+    let text = "No text"
     
-    init(moduleType: FeedbackSheetModuleType, ID: Int, text: String) {
-        self.text = text
+    init(moduleType: FeedbackSheetModuleType, ID: String, text: String?) {
+        if text {
+            self.text = text!
+        }
         super.init(moduleType: moduleType, ID: ID)
     }
 }

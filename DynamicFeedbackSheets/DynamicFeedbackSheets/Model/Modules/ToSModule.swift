@@ -9,10 +9,12 @@
 import UIKit
 
 class ToSModule: DescriptionModule {
-    let title: String
+    let title = "No Title"
     
-    init(moduleType: FeedbackSheetModuleType, ID: Int, text: String, title: String) {
-        self.title = title
+    init(moduleType: FeedbackSheetModuleType, ID: String, text: String?, title: String?) {
+        if title {
+            self.title = title!
+        }
         super.init(moduleType: moduleType, ID: ID, text: text)
     }
 }
