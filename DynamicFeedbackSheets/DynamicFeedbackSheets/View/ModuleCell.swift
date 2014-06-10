@@ -8,8 +8,8 @@
 
 import UIKit
 
-protocol ModuleCellDelegate {
-    func moduleCell(cell: ModuleCell, didGetResponse response: (key: String, value: Any))
+@objc protocol ModuleCellDelegate {
+    func moduleCell(cell: ModuleCell, didGetResponse response: NSObject!, forID ID: String)
 }
 
 class ModuleCell: UITableViewCell {
@@ -17,10 +17,11 @@ class ModuleCell: UITableViewCell {
     
     var module: FeedbackSheetModule?
     var delegate: ModuleCellDelegate?
-
-    // MARK: View Life Cycle
+    
+    // MARK: View Life Cycleb
     
     override func prepareForReuse() {
         module = nil
+        delegate = nil
     }
 }

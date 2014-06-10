@@ -16,13 +16,19 @@ class TextFieldCell: ModuleCell, UITextFieldDelegate {
     @IBOutlet var charactersLabel: UILabel
     
     override var module: FeedbackSheetModule? {
-    didSet {
-        if let textModule = oldValue as? TextModule {
+    willSet {
+        if let textModule = newValue as? TextModule {
             descriptionLabel.text = textModule.text
             textField.text = nil
             charactersLabel.text = "Remaining characters: \(textModule.characterLimit)"
         }
     }
+    }
+    
+    // MARK: Testing, current Bug in Xcode (Ambiguous use of module)
+    
+    func setModule(module: FeedbackSheetModule) {
+        self.module = module
     }
     
     // MARK: View Life Cycle
@@ -43,7 +49,7 @@ class TextFieldCell: ModuleCell, UITextFieldDelegate {
         var shouldChange = true
         
         if let textModule = module as? TextModule {
-            shouldChange = (newLength < textModule.characterLimit) ? true : false
+            shouldChange = (newLength <= textModule.characterLimit) ? true : false
             if shouldChange {
                 charactersLabel.text = "Remaining characters: \(textModule.characterLimit - newLength)"
             }
@@ -54,8 +60,8 @@ class TextFieldCell: ModuleCell, UITextFieldDelegate {
     
     func textFieldDidEndEditing(textField: UITextField!) {
         if let textModule = module as? TextModule {
-            textModule.responseData = textField.text
-            delegate?.moduleCell(self, didGetResponse: textModule.response!)
+            textModule.responseData = textField.text as NSString
+            delegate?.moduleCell(self, didGetResponse: textModule.responseData, forID: textModule.ID)
         }
     }
 }

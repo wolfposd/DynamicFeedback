@@ -45,15 +45,7 @@ class FeedbackSheetModule {
     }
     
     // Response Data
-    var responseData: Any?
-    
-    var response: (key: String, value: Any)? {
-    if responseData {
-        return (ID, responseData)
-    } else {
-        return nil
-        }
-    }
+    var responseData: NSObject?
     
     // MARK: Init
     

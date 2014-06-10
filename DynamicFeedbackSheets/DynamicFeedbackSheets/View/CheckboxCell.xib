@@ -13,18 +13,27 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62a-Yw-D3f">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62a-Yw-D3f">
                         <rect key="frame" x="20" y="11" width="223" height="21"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CuG-Fp-0f7">
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CuG-Fp-0f7">
                         <rect key="frame" x="251" y="6" width="51" height="31"/>
                         <connections>
                             <action selector="toggleCheckbox:" destination="G5l-ju-sLd" eventType="valueChanged" id="eZl-m5-RPI"/>
                         </connections>
                     </switch>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="62a-Yw-D3f" secondAttribute="bottom" constant="11" id="027-Vs-w3q"/>
+                    <constraint firstItem="62a-Yw-D3f" firstAttribute="leading" secondItem="3zi-b5-ns2" secondAttribute="leading" constant="20" symbolic="YES" id="3s3-yM-kdq"/>
+                    <constraint firstAttribute="bottom" secondItem="CuG-Fp-0f7" secondAttribute="bottom" constant="6" id="68x-Kh-ws1"/>
+                    <constraint firstItem="62a-Yw-D3f" firstAttribute="top" secondItem="3zi-b5-ns2" secondAttribute="top" constant="11" id="9Zl-cA-9vI"/>
+                    <constraint firstItem="CuG-Fp-0f7" firstAttribute="top" secondItem="3zi-b5-ns2" secondAttribute="top" constant="6" id="Gwo-IZ-Lfe"/>
+                    <constraint firstItem="CuG-Fp-0f7" firstAttribute="leading" secondItem="62a-Yw-D3f" secondAttribute="trailing" constant="8" id="gjM-6m-Gwa"/>
+                    <constraint firstAttribute="trailing" secondItem="CuG-Fp-0f7" secondAttribute="trailing" constant="20" symbolic="YES" id="iX5-MJ-7FM"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="descriptionLabel" destination="62a-Yw-D3f" id="bgb-kJ-zIk"/>

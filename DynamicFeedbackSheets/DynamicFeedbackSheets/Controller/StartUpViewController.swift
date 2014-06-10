@@ -34,7 +34,6 @@ class StartUpViewController: UIViewController, FeedbackSheetManagerDelegate {
     // MARK: FeedbackSheetManagerDelegate
     
     func feedbackSheetManager(manager: FeedbackSheetManager, didFinishFetchingSheet sheet: FeedbackSheet) {
-        println("Fetch callback")
         performSegueWithIdentifier("presentFeedbackSheet", sender: sheet)
     }
     
@@ -51,8 +50,10 @@ class StartUpViewController: UIViewController, FeedbackSheetManagerDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!)  {
         if segue.identifier == "presentFeedbackSheet" {
-            if let sheetViewController = segue.destinationViewController as? FeedbackSheetTableViewController {
-                sheetViewController.sheet = sender as FeedbackSheet
+            if let navigationController = segue.destinationViewController as? UINavigationController {
+                if let sheetViewController = navigationController.topViewController as? FeedbackSheetViewController {
+                    sheetViewController.sheet = sender as FeedbackSheet
+                }
             }
         }
     }

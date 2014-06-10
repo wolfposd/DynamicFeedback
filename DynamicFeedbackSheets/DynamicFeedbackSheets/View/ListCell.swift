@@ -15,11 +15,11 @@ class ListCell: ModuleCell {
     @IBOutlet var listControl: UISegmentedControl
     
     override var module: FeedbackSheetModule? {
-    didSet {
+    willSet {
         listControl.removeAllSegments()
         descriptionLabel.text = nil
         
-        if let list = oldValue as? ListModule {
+        if let list = newValue as? ListModule {
             descriptionLabel.text = list.text
             
             for (index, segmentTitle) in enumerate(list.elements) {
@@ -29,12 +29,18 @@ class ListCell: ModuleCell {
     }
     }
     
+    // MARK: Testing, current Bug in Xcode (Ambiguous use of module)
+    
+    func setModule(module: FeedbackSheetModule) {
+        self.module = module
+    }
+    
     // MARK: IBActions
     
     @IBAction func selectSegment(sender: UISegmentedControl) {
         if let list = module as? ListModule {
-            list.responseData = list.elements[sender.selectedSegmentIndex]
-            delegate?.moduleCell(self, didGetResponse: list.response!)
+            list.responseData = list.elements[sender.selectedSegmentIndex] as NSString
+            delegate?.moduleCell(self, didGetResponse: list.responseData, forID: list.ID)
         }
     }
 }

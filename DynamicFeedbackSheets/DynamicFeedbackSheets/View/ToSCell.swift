@@ -17,14 +17,20 @@ class ToSCell: ModuleCell {
     @IBOutlet var declineButton: UIButton
     
     override var module: FeedbackSheetModule? {
-    didSet {
-        if let toS = module as? ToSModule {
+    willSet {
+        if let toS = newValue as? ToSModule {
             titleLabel.text = toS.title
             textView.text = toS.text
             acceptButton.enabled = true
             declineButton.enabled = true
         }
     }
+    }
+    
+    // MARK: Testing, current Bug in Xcode (Ambiguous use of module)
+    
+    func setModule(module: FeedbackSheetModule) {
+        self.module = module
     }
 
     // MARK: View Life Cycle
@@ -40,15 +46,15 @@ class ToSCell: ModuleCell {
     
     @IBAction func accept(sender: UIButton) {
         if let toS = module as? ToSModule {
-            toS.responseData = true
-            delegate?.moduleCell(self, didGetResponse: toS.response!)
+            toS.responseData = NSNumber(bool: true)
+            delegate?.moduleCell(self, didGetResponse: toS.responseData, forID: toS.ID)
         }
     }
     
     @IBAction func decline(sender: UIButton) {
         if let toS = module as? ToSModule {
-            toS.responseData = false
-            delegate?.moduleCell(self, didGetResponse: toS.response!)
+            toS.responseData = NSNumber(bool: false)
+            delegate?.moduleCell(self, didGetResponse: toS.responseData, forID: toS.ID)
         }
     }
 }

@@ -39,9 +39,6 @@ class FeedbackSheetManager {
                 self.delegate?.feedbackSheetManager(self, didFailWithError: error)
             } else {
                 if let jsonData = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? NSDictionary {
-                    
-                    println(jsonData)
-                    
                     if let sheet = self.feedbackSheetFromDictionary(jsonData) {
                         self.delegate?.feedbackSheetManager(self, didFinishFetchingSheet: sheet)
                     } else {
@@ -81,12 +78,9 @@ class FeedbackSheetManager {
     // MARK: FeedbackSheet Construction Methods
     
     func feedbackSheetFromDictionary(dict: NSDictionary) -> FeedbackSheet? {
-        println("start construction of sheet")
         let title = dict["title"] as? String
         let ID = dict["id"] as? Int
-        
-        println("title: \(title) id: \(ID)")
-        
+                
         if !(title && ID) {
             return nil
         }

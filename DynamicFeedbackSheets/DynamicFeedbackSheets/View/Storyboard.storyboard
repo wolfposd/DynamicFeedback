@@ -34,54 +34,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="DynamicFeedback Demo" id="kUp-DN-3Rf"/>
                     <connections>
-                        <segue destination="8GY-n4-7le" kind="modal" identifier="presentFeedbackSheet" id="o8d-l4-eIR"/>
+                        <segue destination="hrf-kM-M2A" kind="modal" identifier="presentFeedbackSheet" id="RNe-7g-jxz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jlA-At-YlR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1176" y="553"/>
-        </scene>
-        <!--Feedback Sheet Table View Controller-->
-        <scene sceneID="7mo-zA-kGP">
-            <objects>
-                <tableViewController id="8GY-n4-7le" customClass="FeedbackSheetTableViewController" customModule="DynamicFeedbackSheets" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="lrt-8p-nUH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="bc8-JP-Eex">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <items>
-                                <navigationItem title="Title" id="dfq-gB-21w"/>
-                            </items>
-                        </navigationBar>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="pd2-NY-RfH" style="IBUITableViewCellStyleDefault" id="S9M-gC-8tk">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="S9M-gC-8tk" id="6Va-Ur-D3c">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pd2-NY-RfH">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="8GY-n4-7le" id="Uo2-84-evZ"/>
-                            <outlet property="delegate" destination="8GY-n4-7le" id="KZC-T7-e7j"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OYa-RP-gjr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1668" y="553"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="USz-dn-r8I">
@@ -100,6 +58,72 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKL-AO-aH8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="644" y="553"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bMj-F7-1C4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hrf-kM-M2A" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gQC-KI-Vmg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yNX-z0-r3Q" kind="relationship" relationship="rootViewController" id="bcS-5h-fEb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OE9-6n-FOp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1691" y="553"/>
+        </scene>
+        <!--Feedback Sheet View Controller - Feedback Sheet-->
+        <scene sceneID="rB3-3e-nAV">
+            <objects>
+                <viewController id="yNX-z0-r3Q" customClass="FeedbackSheetViewController" customModule="DynamicFeedbackSheets" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IoV-lS-0NJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cp7-sK-IRG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OVd-rq-1GM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oaf-aR-nmR">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <connections>
+                                    <segue destination="Mod-lV-maS" kind="embed" identifier="presentPageTableViewController" id="EY6-RM-9AJ"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Feedback Sheet" id="Qdn-KO-QWk"/>
+                    <connections>
+                        <outlet property="view" destination="OVd-rq-1GM" id="ebz-Qg-v4D"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Bd-p1-LK0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2232" y="553"/>
+        </scene>
+        <!--Feedback Sheet Page Table View Controller-->
+        <scene sceneID="7jZ-EJ-paP">
+            <objects>
+                <tableViewController id="Mod-lV-maS" customClass="FeedbackSheetPageTableViewController" customModule="DynamicFeedbackSheets" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="JSc-c2-lm8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="Mod-lV-maS" id="5II-RB-FZ8"/>
+                            <outlet property="delegate" destination="Mod-lV-maS" id="ARf-4w-hca"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bJy-rS-f2W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2744" y="553"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

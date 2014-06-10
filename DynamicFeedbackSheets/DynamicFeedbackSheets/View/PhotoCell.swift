@@ -16,11 +16,17 @@ class PhotoCell: ModuleCell, UIActionSheetDelegate, UIImagePickerControllerDeleg
     var presentingController: UIViewController?
     
     override var module: FeedbackSheetModule? {
-    didSet {
-        if let photo = oldValue as? DescriptionModule {
+    willSet {
+        if let photo = newValue as? DescriptionModule {
             descriptionLabel.text = photo.text
         }
     }
+    }
+    
+    // MARK: Testing, current Bug in Xcode (Ambiguous use of module)
+    
+    func setModule(module: FeedbackSheetModule) {
+        self.module = module
     }
     
     // MARK: View Life Cycle
@@ -68,8 +74,8 @@ class PhotoCell: ModuleCell, UIActionSheetDelegate, UIImagePickerControllerDeleg
         if let photo = module as? DescriptionModule {
             let pickedPhoto = info[UIImagePickerControllerOriginalImage] as UIImage
             photoView.image = pickedPhoto
-            photo.responseData = pickedPhoto
-            delegate?.moduleCell(self, didGetResponse: photo.response!)
+            //photo.responseData = pickedPhoto
+            //delegate?.moduleCell(self, didGetResponse: photo.responseData, forID: photo.ID)
         }
         
         presentingController?.dismissViewControllerAnimated(true, completion: nil)

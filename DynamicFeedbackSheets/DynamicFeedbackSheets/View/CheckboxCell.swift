@@ -14,19 +14,25 @@ class CheckboxCell: ModuleCell {
     @IBOutlet var descriptionLabel: UILabel
     
     override var module: FeedbackSheetModule? {
-    didSet {
-        if let checkbox = oldValue as? DescriptionModule {
+    willSet {
+        if let checkbox = newValue as? DescriptionModule {
             descriptionLabel.text = checkbox.text
         }
     }
+    }
+    
+    // MARK: Testing, current Bug in Xcode (Ambiguous use of module)
+    
+    func setModule(module: FeedbackSheetModule) {
+        self.module = module
     }
     
     // MARK: IBActions
     
     @IBAction func toggleCheckbox(sender: UISwitch) {
         if let checkbox = module as? DescriptionModule {
-            checkbox.responseData = sender.enabled
-            delegate?.moduleCell(self, didGetResponse: checkbox.response!)
+            checkbox.responseData = NSNumber(bool: sender.on)
+            delegate?.moduleCell(self, didGetResponse: checkbox.responseData, forID: checkbox.ID)
         }
     }
 }

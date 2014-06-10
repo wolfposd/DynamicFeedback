@@ -17,12 +17,18 @@ class DateCell: ModuleCell {
     let dateFormatter = NSDateFormatter()
 
     override var module: FeedbackSheetModule? {
-    didSet {
-        if let date = oldValue as? DescriptionModule {
+    willSet {
+        if let date = newValue as? DescriptionModule {
             descriptionLabel.text = date.text
             textField.text = nil
         }
     }
+    }
+    
+    // MARK: Testing, current Bug in Xcode (Ambiguous use of module)
+    
+    func setModule(module: FeedbackSheetModule) {
+        self.module = module
     }
     
     // MARK: View Life Cycle
@@ -52,8 +58,8 @@ class DateCell: ModuleCell {
         textField.resignFirstResponder()
         if let date = module as? DescriptionModule {
             textField.text = dateFormatter.stringFromDate(datePicker.date)
-            date.responseData = datePicker.date
-            delegate?.moduleCell(self, didGetResponse: date.response!)
+            date.responseData = dateFormatter.stringFromDate(datePicker.date) as NSString
+            delegate?.moduleCell(self, didGetResponse: date.responseData, forID: date.ID)
         }
 
     }

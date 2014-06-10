@@ -15,11 +15,17 @@ class LongListCell: ModuleCell, UIPickerViewDataSource, UIPickerViewDelegate {
     let listPicker = UIPickerView()
 
     override var module: FeedbackSheetModule? {
-    didSet {
-        if let list = oldValue as? ListModule {
+    willSet {
+        if let list = newValue as? ListModule {
             listPicker.reloadAllComponents()
         }
     }
+    }
+    
+    // MARK: Testing, current Bug in Xcode (Ambiguous use of module)
+    
+    func setModule(module: FeedbackSheetModule) {
+        self.module = module
     }
     
     // MARK: View Life Cycle
@@ -66,8 +72,8 @@ class LongListCell: ModuleCell, UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(pickerView: UIPickerView!, didSelectRow row: Int, inComponent component: Int) {
         if let longList = module as? ListModule {
             textField.text = longList.elements[row]
-            longList.responseData = longList.elements[row]
-            delegate?.moduleCell(self, didGetResponse: longList.response!)
+            longList.responseData = longList.elements[row] as NSString
+            delegate?.moduleCell(self, didGetResponse: longList.responseData, forID: longList.ID)
         }
     }
 }
