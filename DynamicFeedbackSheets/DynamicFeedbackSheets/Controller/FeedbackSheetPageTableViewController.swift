@@ -48,6 +48,12 @@ class FeedbackSheetPageTableViewController: UITableViewController, ModuleCellDel
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: Actions
+    
+    func submit(sender: UIButton) {
+        
+    }
+    
     // MARK: UITableViewDataSource
     
     override func numberOfSectionsInTableView(tableView: UITableView!) -> Int  {
@@ -124,12 +130,6 @@ class FeedbackSheetPageTableViewController: UITableViewController, ModuleCellDel
         println(responsesDictionary)
     }
     
-    // MARK: Actions
-    
-    func submit(sender: AnyObject) {
-        
-    }
-    
     // MARK: Helper Methods
     
     func registerModuleCells() {
@@ -140,7 +140,7 @@ class FeedbackSheetPageTableViewController: UITableViewController, ModuleCellDel
             tableView.registerNib(UINib(nibName: name, bundle: NSBundle.mainBundle()), forCellReuseIdentifier: identifier[index])
         }
     }
-    
+        
     func toggleSubmitButton(isLastPage: Bool) {
         if !isLastPage {
             tableView.tableFooterView = nil
