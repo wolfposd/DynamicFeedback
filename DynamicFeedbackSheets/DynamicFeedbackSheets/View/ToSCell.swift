@@ -46,14 +46,14 @@ class ToSCell: ModuleCell {
     
     @IBAction func accept(sender: UIButton) {
         if let toS = module as? ToSModule {
-            toS.responseData = NSNumber(bool: true)
+            toS.responseData = true
             delegate?.moduleCell(self, didGetResponse: toS.responseData, forID: toS.ID)
         }
     }
     
     @IBAction func decline(sender: UIButton) {
         if let toS = module as? ToSModule {
-            toS.responseData = NSNumber(bool: false)
+            toS.responseData = false
             delegate?.moduleCell(self, didGetResponse: toS.responseData, forID: toS.ID)
         }
     }

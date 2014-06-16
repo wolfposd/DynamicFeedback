@@ -40,7 +40,7 @@ class SliderCell: ModuleCell {
 //            let newValue = steps * CFloat(sliderModule.stepValue)
 //            
 //            slider.value = newValue
-            sliderModule.responseData = NSNumber(float: slider.value)
+            sliderModule.responseData = slider.value
             delegate?.moduleCell(self, didGetResponse: sliderModule.responseData, forID: sliderModule.ID)
         }
     }

@@ -39,7 +39,7 @@ class ListCell: ModuleCell {
     
     @IBAction func selectSegment(sender: UISegmentedControl) {
         if let list = module as? ListModule {
-            list.responseData = list.elements[sender.selectedSegmentIndex] as NSString
+            list.responseData = list.elements[sender.selectedSegmentIndex]
             delegate?.moduleCell(self, didGetResponse: list.responseData, forID: list.ID)
         }
     }

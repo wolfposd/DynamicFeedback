@@ -60,7 +60,7 @@ class TextFieldCell: ModuleCell, UITextFieldDelegate {
     
     func textFieldDidEndEditing(textField: UITextField!) {
         if let textModule = module as? TextModule {
-            textModule.responseData = textField.text as NSString
+            textModule.responseData = textField.text
             delegate?.moduleCell(self, didGetResponse: textModule.responseData, forID: textModule.ID)
         }
     }

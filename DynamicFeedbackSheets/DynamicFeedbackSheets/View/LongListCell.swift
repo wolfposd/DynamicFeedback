@@ -72,7 +72,7 @@ class LongListCell: ModuleCell, UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(pickerView: UIPickerView!, didSelectRow row: Int, inComponent component: Int) {
         if let longList = module as? ListModule {
             textField.text = longList.elements[row]
-            longList.responseData = longList.elements[row] as NSString
+            longList.responseData = longList.elements[row]
             delegate?.moduleCell(self, didGetResponse: longList.responseData, forID: longList.ID)
         }
     }

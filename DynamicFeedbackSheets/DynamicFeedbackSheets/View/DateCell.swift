@@ -58,7 +58,7 @@ class DateCell: ModuleCell {
         textField.resignFirstResponder()
         if let date = module as? DescriptionModule {
             textField.text = dateFormatter.stringFromDate(datePicker.date)
-            date.responseData = dateFormatter.stringFromDate(datePicker.date) as NSString
+            date.responseData = dateFormatter.stringFromDate(datePicker.date)
             delegate?.moduleCell(self, didGetResponse: date.responseData, forID: date.ID)
         }
 

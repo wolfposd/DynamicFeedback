@@ -31,7 +31,7 @@ class CheckboxCell: ModuleCell {
     
     @IBAction func toggleCheckbox(sender: UISwitch) {
         if let checkbox = module as? DescriptionModule {
-            checkbox.responseData = NSNumber(bool: sender.on)
+            checkbox.responseData = sender.on
             delegate?.moduleCell(self, didGetResponse: checkbox.responseData, forID: checkbox.ID)
         }
     }
