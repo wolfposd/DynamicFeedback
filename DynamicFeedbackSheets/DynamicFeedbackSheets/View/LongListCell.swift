@@ -11,7 +11,7 @@ import UIKit
 class LongListCell: ModuleCell, UIPickerViewDataSource, UIPickerViewDelegate {
     // MARK: Properties
     
-    @IBOutlet var textField: UITextField
+    @IBOutlet var textField: UITextField!
     let listPicker = UIPickerView()
 
     override var module: FeedbackSheetModule? {
@@ -51,6 +51,10 @@ class LongListCell: ModuleCell, UIPickerViewDataSource, UIPickerViewDelegate {
     
     func selectListElement() {
         textField.resignFirstResponder()
+    }
+    
+    override func reloadWithResponseData(responseData: AnyObject) {
+       
     }
     
     // MARK: UIPickerViewDataSource

@@ -24,4 +24,8 @@ class ModuleCell: UITableViewCell {
         module = nil
         delegate = nil
     }
+    
+    // MARK: Abstract API
+    
+    func reloadWithResponseData(responseData: AnyObject) { /*abstract method */ }
 }

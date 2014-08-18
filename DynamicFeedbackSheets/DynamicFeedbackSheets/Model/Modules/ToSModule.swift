@@ -16,7 +16,7 @@ class ToSModule: DescriptionModule {
     // MARK: Init
     
     init(moduleType: FeedbackSheetModuleType, ID: String, text: String?, title: String?) {
-        if title {
+        if title != nil {
             self.title = title!
         }
         super.init(moduleType: moduleType, ID: ID, text: text)

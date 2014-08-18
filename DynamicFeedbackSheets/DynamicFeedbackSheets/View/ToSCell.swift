@@ -11,10 +11,10 @@ import UIKit
 class ToSCell: ModuleCell {
     // MARK: Properties
     
-    @IBOutlet var titleLabel: UILabel
-    @IBOutlet var textView: UITextView
-    @IBOutlet var acceptButton: UIButton
-    @IBOutlet var declineButton: UIButton
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var textView: UITextView!
+    @IBOutlet var acceptButton: UIButton!
+    @IBOutlet var declineButton: UIButton!
     
     override var module: FeedbackSheetModule? {
     willSet {

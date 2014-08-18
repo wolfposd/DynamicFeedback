@@ -16,7 +16,7 @@ class DescriptionModule: FeedbackSheetModule {
     // MARK: Init
 
     init(moduleType: FeedbackSheetModuleType, ID: String, text: String?) {
-        if text {
+        if text != nil {
             self.text = text!
         }
         super.init(moduleType: moduleType, ID: ID)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StartUpViewController: UIViewController, FeedbackSheetManagerDelegate {
+class StartUpViewController: UIViewController, FeedbackSheetManagerDelegate, FeedbackSheetViewControllerDelegate {
     // MARK: Properties
     
     let manager = FeedbackSheetManager(baseURL: "http://beeqn.informatik.uni-hamburg.de/feedback/rest.php/")
@@ -42,8 +42,19 @@ class StartUpViewController: UIViewController, FeedbackSheetManagerDelegate {
     }
     
     func feedbackSheetManager(manager: FeedbackSheetManager, didFailWithError error: NSError) {
-        println("Error \(error)")
+        println("Error (feedbackSheetManager didFailWithError) \(error)")
         
+    }
+    
+    // MARK: FeedbackSheetViewControllerDelegate
+    
+    func feedbackSheetViewController(controller: FeedbackSheetViewController, finishedWithResponse response: NSDictionary!) {
+        // next step: posting response
+        println("posting \(response)")
+    }
+    
+    func feedbackSheetViewController(controller: FeedbackSheetViewController, didFailWithError error: NSError) {
+        // Error handling
     }
     
     // MARK: Navigation
@@ -53,6 +64,7 @@ class StartUpViewController: UIViewController, FeedbackSheetManagerDelegate {
             if let navigationController = segue.destinationViewController as? UINavigationController {
                 if let sheetViewController = navigationController.topViewController as? FeedbackSheetViewController {
                     sheetViewController.sheet = sender as FeedbackSheet
+                    sheetViewController.delegate = self
                 }
             }
         }

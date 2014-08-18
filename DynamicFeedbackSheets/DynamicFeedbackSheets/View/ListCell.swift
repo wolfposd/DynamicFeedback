@@ -11,8 +11,8 @@ import UIKit
 class ListCell: ModuleCell {
     // MARK: Properties
     
-    @IBOutlet var descriptionLabel: UILabel
-    @IBOutlet var listControl: UISegmentedControl
+    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var listControl: UISegmentedControl!
     
     override var module: FeedbackSheetModule? {
     willSet {
@@ -29,7 +29,7 @@ class ListCell: ModuleCell {
     }
     }
     
-    // MARK: Testing, current Bug in Xcode (Ambiguous use of module)
+    // FIXME: Testing, current Bug in Xcode (Ambiguous use of module)
     
     func setModule(module: FeedbackSheetModule) {
         self.module = module
@@ -41,6 +41,18 @@ class ListCell: ModuleCell {
         if let list = module as? ListModule {
             list.responseData = list.elements[sender.selectedSegmentIndex]
             delegate?.moduleCell(self, didGetResponse: list.responseData, forID: list.ID)
+        }
+    }
+    
+    // MARK: Actions
+    
+    override func reloadWithResponseData(responseData: AnyObject) {
+        for index in 0..<listControl.numberOfSegments {
+            println("Segment title: \(listControl.titleForSegmentAtIndex(index)), response \(responseData)")
+            if responseData as String == listControl.titleForSegmentAtIndex(index) {
+                println("match")
+                listControl.selectedSegmentIndex = index
+            }
         }
     }
 }

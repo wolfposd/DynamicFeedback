@@ -11,7 +11,7 @@ import UIKit
 class StarRatingCell: ModuleCell {
     // MARK: Properties
     
-    @IBOutlet var descriptionLabel: UILabel
+    @IBOutlet var descriptionLabel: UILabel!
 
     // MARK: View Life Cycle
     

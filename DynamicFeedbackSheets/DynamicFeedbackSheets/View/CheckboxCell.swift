@@ -11,7 +11,7 @@ import UIKit
 class CheckboxCell: ModuleCell {
     // MARK: Properties
     
-    @IBOutlet var descriptionLabel: UILabel
+    @IBOutlet var descriptionLabel: UILabel!
     
     override var module: FeedbackSheetModule? {
     willSet {

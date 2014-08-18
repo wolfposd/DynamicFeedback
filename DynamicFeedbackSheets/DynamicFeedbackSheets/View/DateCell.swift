@@ -11,8 +11,8 @@ import UIKit
 class DateCell: ModuleCell {
     // MARK: Properties
     
-    @IBOutlet var descriptionLabel: UILabel
-    @IBOutlet var textField: UITextField
+    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var textField: UITextField!
     let datePicker = UIDatePicker()
     let dateFormatter = NSDateFormatter()
 
@@ -62,5 +62,9 @@ class DateCell: ModuleCell {
             delegate?.moduleCell(self, didGetResponse: date.responseData, forID: date.ID)
         }
 
+    }
+    
+    override func reloadWithResponseData(responseData: AnyObject) {
+        textField.text = responseData as String
     }
 }

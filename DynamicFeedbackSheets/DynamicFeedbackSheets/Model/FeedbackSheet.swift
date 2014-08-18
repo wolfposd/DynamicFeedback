@@ -13,12 +13,12 @@ class FeedbackSheet {
 
     let title = "No Title"
     let ID: Int
-    let pages: FeedbackSheetPage[]
+    let pages: [FeedbackSheetPage]
     let fetchDate = NSDate()
     
     // MARK: Init
 
-    init(title: String, ID: Int, pages: FeedbackSheetPage[]) {
+    init(title: String, ID: Int, pages: [FeedbackSheetPage]) {
         self.title = title
         self.ID = ID
         self.pages = pages

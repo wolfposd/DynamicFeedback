@@ -8,11 +8,16 @@
 
 import Foundation
 
+// MARK: Protocol - FeedbackSheetManagerDelegate
+
 protocol FeedbackSheetManagerDelegate {
     func feedbackSheetManager(manager: FeedbackSheetManager, didFinishFetchingSheet sheet: FeedbackSheet)
-    func feedbackSheetManager(manager: FeedbackSheetManager, didFailWithError error: NSError)
     func feedbackSheetManager(manager: FeedbackSheetManager, didPostSheetWithSuccess success: Bool)
+    func feedbackSheetManager(manager: FeedbackSheetManager, didFailWithError error: NSError)
 }
+
+
+// MARK: -
 
 class FeedbackSheetManager {
     // MARK: Properties
@@ -22,12 +27,24 @@ class FeedbackSheetManager {
     
     // MARK: Init
     
+    /**
+        Initializes a new FeedbackSheetManager with the provided base URL.
+    
+        :param: baseURL The base URL of the REST-API.
+    
+        :returns: An initialized FeedbackSheetManager object.
+    */
     init(baseURL: String) {
         self.baseURL = baseURL
     }
     
     // MARK: Public API
     
+    /** 
+        Starts fetching the sheet for the given ID.
+        
+        :param: sheetID The ID of the sheet you want to fetch.
+    */
     func startFetchingSheetWithID(sheetID: String) {
         let fetchURL = NSURL(string: "\(baseURL)sheet/id/\(sheetID)")
         var request = NSMutableURLRequest(URL: fetchURL)
@@ -54,7 +71,13 @@ class FeedbackSheetManager {
         }
     }
     
-    func postSheetWithID(sheetID: Int, responses: NSDictionary) {
+    /**
+        Starts posting the responses dictionary for the given ID.
+    
+        :param: sheetID The ID of the sheet you want to post the responses to.
+        :param: responses Dictionary with the responses of each sheet module.
+    */
+    func postResponsesWithSheetID(sheetID: Int, responses: NSDictionary) {
         
         let fetchURL = NSURL(string: "\(baseURL)sheet/id/\(sheetID)")
         let request = NSMutableURLRequest(URL: fetchURL)
@@ -81,16 +104,16 @@ class FeedbackSheetManager {
         let title = dict["title"] as? String
         let ID = dict["id"] as? Int
                 
-        if !(title && ID) {
+        if !(title != nil && ID != nil) {
             return nil
         }
         
-        var pages = FeedbackSheetPage[]()
+        var pages = [FeedbackSheetPage]()
         
         if let pagesArray = dict["pages"] as? Array<NSDictionary> {
             for pageDict in pagesArray {
                 if let page = feedbackSheetPageFromDictionary(pageDict) {
-                    pages += page
+                    pages.append(page)
                 }
             }
         }
@@ -104,17 +127,17 @@ class FeedbackSheetManager {
     
     func feedbackSheetPageFromDictionary(dict: NSDictionary) -> FeedbackSheetPage? {
         let title = dict["title"] as? String
-        var modulesVisible = FeedbackSheetModule[]()
-        var modulesInvisible = FeedbackSheetModule[]()
+        var modulesVisible = [FeedbackSheetModule]()
+        var modulesInvisible = [FeedbackSheetModule]()
         
         
         if let modulesArray = dict["elements"] as? Array<NSDictionary> {
             for moduleDict in modulesArray {
                 if let module = feedbackSheetModuleFromDictionary(moduleDict) {
                     if module.isInvisible {
-                        modulesInvisible += module
+                        modulesInvisible.append(module)
                     } else {
-                        modulesVisible += module
+                        modulesVisible.append(module)
                     }
                 }
             }
@@ -137,7 +160,7 @@ class FeedbackSheetManager {
         }
         
         let ID = dict["id"] as? String
-        if !ID {
+        if ID == nil {
             return nil
         }
         

@@ -11,9 +11,9 @@ import UIKit
 class TextFieldCell: ModuleCell, UITextFieldDelegate {
     // MARK: Properties
     
-    @IBOutlet var descriptionLabel: UILabel
-    @IBOutlet var textField: UITextField
-    @IBOutlet var charactersLabel: UILabel
+    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var textField: UITextField!
+    @IBOutlet var charactersLabel: UILabel!
     
     override var module: FeedbackSheetModule? {
     willSet {
@@ -42,6 +42,22 @@ class TextFieldCell: ModuleCell, UITextFieldDelegate {
         textField.delegate = self
     }
     
+    // MARK: Actions
+    
+    override func reloadWithResponseData(responseData: AnyObject) {
+        let text = responseData as String
+        let textLength = countElements(text)
+        var shouldChange = true
+        textField.text = text
+        
+        if let textModule = module as? TextModule {
+            shouldChange = (textLength <= textModule.characterLimit) ? true : false
+            if shouldChange {
+                charactersLabel.text = "Remaining characters: \(textModule.characterLimit - textLength)"
+            }
+        }
+    }
+    
     // MARK: UITextFieldDelegate
     
     func textField(textField: UITextField!, shouldChangeCharactersInRange range: NSRange, replacementString string: String!) -> Bool {
@@ -56,6 +72,11 @@ class TextFieldCell: ModuleCell, UITextFieldDelegate {
         }
         
         return shouldChange
+    }
+    
+    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     func textFieldDidEndEditing(textField: UITextField!) {

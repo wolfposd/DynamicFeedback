@@ -16,7 +16,7 @@ class TextModule: DescriptionModule {
     // MARK: Init
     
     init(moduleType: FeedbackSheetModuleType, ID: String, text: String?, characterLimit: Int?) {
-        if characterLimit {
+        if characterLimit != nil {
             self.characterLimit = characterLimit!
         }
         super.init(moduleType: moduleType, ID: ID, text: text)

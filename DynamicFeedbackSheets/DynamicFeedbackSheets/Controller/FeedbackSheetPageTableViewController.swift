@@ -10,26 +10,33 @@ import UIKit
 
 @objc protocol FeedbackSheetPageControllerDelegate {
     func feedbackSheetPageController(controller: FeedbackSheetPageTableViewController, submittedWithResponse response: NSDictionary)
-    @optional func feedbackSheetPageControllerDidDeclineTermsOfService(controller: FeedbackSheetPageTableViewController)
+    optional func feedbackSheetPageControllerDidDeclineTermsOfService(controller: FeedbackSheetPageTableViewController)
 }
 
 class FeedbackSheetPageTableViewController: UITableViewController, ModuleCellDelegate {
     // MARK: Properties
     
     var page: FeedbackSheetPage! {
-    didSet {
-        tableView.reloadData()
-    }
+        didSet {
+            tableView.reloadData()
+        }
     }
     
     var lastPage: Bool = false {
-    didSet{
-        if lastPage != oldValue {
-            toggleSubmitButton(lastPage)
+        didSet {
+            if lastPage != oldValue {
+                toggleSubmitButton(lastPage)
+            }
         }
     }
-    }
     
+    var sheetTitle: String = "No title" {
+        didSet {
+            if sheetTitle != oldValue {
+                showSheetTitle()
+            }
+        }
+    }
     var responsesDictionary = Dictionary<String, NSObject>()
     var delegate: FeedbackSheetPageControllerDelegate?
     
@@ -51,7 +58,7 @@ class FeedbackSheetPageTableViewController: UITableViewController, ModuleCellDel
     // MARK: Actions
     
     func submit(sender: UIButton) {
-        
+        delegate?.feedbackSheetPageController(self, submittedWithResponse: responsesDictionary)
     }
     
     // MARK: UITableViewDataSource
@@ -117,7 +124,13 @@ class FeedbackSheetPageTableViewController: UITableViewController, ModuleCellDel
                 tempCell.setModule(module)
             }
         default:
-            println("Error no matching Cell")
+            println("Error: No matching Cell")
+        }
+        
+        // Reload persisted state
+        if let data = responsesDictionary[module.ID] {
+            println("ID: \(module.ID) Data: \(data)")
+            moduleCell.reloadWithResponseData(data)
         }
         
         return moduleCell
@@ -128,6 +141,12 @@ class FeedbackSheetPageTableViewController: UITableViewController, ModuleCellDel
     func moduleCell(cell: ModuleCell, didGetResponse response: NSObject!, forID ID: String) {
         responsesDictionary[ID] = response
         println(responsesDictionary)
+        
+        if cell.module?.type == FeedbackSheetModuleType.ToS {
+            if !(response as Bool) {
+                delegate?.feedbackSheetPageControllerDidDeclineTermsOfService?(self);
+            }
+        }
     }
     
     // MARK: Helper Methods
@@ -140,7 +159,22 @@ class FeedbackSheetPageTableViewController: UITableViewController, ModuleCellDel
             tableView.registerNib(UINib(nibName: name, bundle: NSBundle.mainBundle()), forCellReuseIdentifier: identifier[index])
         }
     }
+    
+    func showSheetTitle() {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 80))
+        let titleLabel = UILabel()
+        headerView.addSubview(titleLabel)
+       
+        titleLabel.text = sheetTitle
+        titleLabel.textAlignment = .Center
+        titleLabel.backgroundColor = UIColor.whiteColor()
+        headerView.backgroundColor = UIColor.whiteColor()
+        titleLabel.sizeToFit()
         
+        titleLabel.center = headerView.center
+        tableView.tableHeaderView = headerView
+    }
+    
     func toggleSubmitButton(isLastPage: Bool) {
         if !isLastPage {
             tableView.tableFooterView = nil

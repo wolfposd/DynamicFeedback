@@ -18,13 +18,13 @@ class SliderModule: DescriptionModule {
     // MARK: Init
     
     init(moduleType: FeedbackSheetModuleType, ID: String, text: String?, minValue: Double?, maxValue: Double?, stepValue: Double?) {
-        if minValue {
+        if minValue != nil {
             self.minValue = minValue!
         }
-        if maxValue {
+        if maxValue != nil {
             self.maxValue = maxValue!
         }
-        if stepValue {
+        if stepValue != nil {
             self.stepValue = stepValue!
         }
         super.init(moduleType: moduleType, ID: ID, text: text)

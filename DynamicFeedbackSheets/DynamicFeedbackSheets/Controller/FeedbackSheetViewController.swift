@@ -9,26 +9,25 @@
 import UIKit
 import QuartzCore
 
-@objc protocol FeedbackSheetViewControllerDelegate {
+protocol FeedbackSheetViewControllerDelegate {
     func feedbackSheetViewController(controller: FeedbackSheetViewController, finishedWithResponse response: NSDictionary!)
-    @optional func feedbackSheetViewController(controller: FeedbackSheetViewController, didFailWithError error: NSError)
+    func feedbackSheetViewController(controller: FeedbackSheetViewController, didFailWithError error: NSError)
 }
 
 class FeedbackSheetViewController: UIViewController, FeedbackSheetPageControllerDelegate {
     // MARK: Properties
     
     var sheet: FeedbackSheet! {
-    willSet {
-        self.title = newValue.title
-        var newPages = FeedbackSheetPage[]()
-        for page in newValue.pages {
-            newPages += page
+        willSet {
+            var newPages = [FeedbackSheetPage]()
+            for page in newValue.pages {
+                newPages.append(page)
+            }
+            pages = newPages
         }
-        pages = newPages
-    }
     }
     
-    var pages: FeedbackSheetPage[]!
+    var pages: [FeedbackSheetPage]!
     var pageIndex = 0
     let pageIndicatorLabel = UILabel()
     var pageTVC: FeedbackSheetPageTableViewController!
@@ -41,10 +40,10 @@ class FeedbackSheetViewController: UIViewController, FeedbackSheetPageController
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController.condensesBarsOnSwipe = true
-        navigationController.condensesBarsWhenKeyboardAppears = true
+        // navigationController.condensesBarsOnSwipe = true
+        // navigationController.condensesBarsWhenKeyboardAppears = true
         
-        setupPageIndicatorLabel()
+//        setupPageIndicatorLabel()
         
         // Add pageControl UIBarButtonItems
         nextPageButton = UIBarButtonItem(image: UIImage(named: "ArrowNextPage"), style: .Bordered, target: self, action: ("nextPage"))
@@ -57,7 +56,7 @@ class FeedbackSheetViewController: UIViewController, FeedbackSheetPageController
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        showPageIndicator()
+//        showPageIndicator()
     }
     
     override func didReceiveMemoryWarning() {
@@ -70,13 +69,13 @@ class FeedbackSheetViewController: UIViewController, FeedbackSheetPageController
     func nextPage() {
         pageTVC.page = pages[++pageIndex]
         togglePageButtons()
-        showPageIndicator()
+//        showPageIndicator()
     }
     
     func lastPage() {
         pageTVC.page = pages[--pageIndex]
         togglePageButtons()
-        showPageIndicator()
+//        showPageIndicator()
     }
     
     func togglePageButtons() {
@@ -91,6 +90,9 @@ class FeedbackSheetViewController: UIViewController, FeedbackSheetPageController
         } else {
             lastPageButton.enabled = true
         }
+        
+        pageTVC.lastPage = (pageIndex < pages.count - 1) ? false : true
+        title = "Page \(pageIndex + 1) of \(pages.count)"
     }
     
     // MARK: FeedbackSheetPageControllerDelegate
@@ -100,43 +102,44 @@ class FeedbackSheetViewController: UIViewController, FeedbackSheetPageController
     }
     
     func feedbackSheetPageControllerDidDeclineTermsOfService(controller: FeedbackSheetPageTableViewController) {
-        // delegate Error
+        let error = NSError(domain: "TOSDECLINEERROR", code: 10, userInfo: ["errorDescription" : "Terms of Service declined by the user"])
+        delegate?.feedbackSheetViewController(self, didFailWithError: error)
     }
     
     // MARK: Helper Methods
     
-    func setupPageIndicatorLabel() {
-        pageIndicatorLabel.textColor = UIColor.lightTextColor()
-        pageIndicatorLabel.backgroundColor = UIColor.darkGrayColor()
-        pageIndicatorLabel.textAlignment = .Center
-        pageIndicatorLabel.layer.masksToBounds = true
-        pageIndicatorLabel.layer.cornerRadius = 5
-        pageIndicatorLabel.alpha = 0.0
-        pageIndicatorLabel.hidden = true
-        
-        view.addSubview(pageIndicatorLabel)
-    }
-    
-    func showPageIndicator() {
-        pageIndicatorLabel.text = "\(pageIndex + 1) / \(pages.count)"
-        pageIndicatorLabel.sizeToFit()
-        pageIndicatorLabel.frame.size.width += 5
-        pageIndicatorLabel.center = CGPoint(x: view.center.x, y: view.frame.height - 20)
-        
-        if pageIndicatorLabel.hidden {
-            pageIndicatorLabel.hidden = false
-            
-            UIView.animateWithDuration(0.8, animations: {
-                self.pageIndicatorLabel.alpha = 1.0
-                }) { finished in self.hidePageIndicator() }
-        }
-    }
-    
-    func hidePageIndicator() {
-        UIView.animateWithDuration(0.8, delay: 0.3, options: nil, animations: {
-            self.pageIndicatorLabel.alpha = 0.0
-            }) { finished in self.pageIndicatorLabel.hidden = true }
-    }
+//    func setupPageIndicatorLabel() {
+//        pageIndicatorLabel.textColor = UIColor.lightTextColor()
+//        pageIndicatorLabel.backgroundColor = UIColor.darkGrayColor()
+//        pageIndicatorLabel.textAlignment = .Center
+//        pageIndicatorLabel.layer.masksToBounds = true
+//        pageIndicatorLabel.layer.cornerRadius = 5
+//        pageIndicatorLabel.alpha = 0.0
+//        pageIndicatorLabel.hidden = true
+//        
+//        view.addSubview(pageIndicatorLabel)
+//    }
+//    
+//    func showPageIndicator() {
+//        pageIndicatorLabel.text = "\(pageIndex + 1) / \(pages.count)"
+//        pageIndicatorLabel.sizeToFit()
+//        pageIndicatorLabel.frame.size.width += 5
+//        pageIndicatorLabel.center = CGPoint(x: view.center.x, y: view.frame.height - 20)
+//        
+//        if pageIndicatorLabel.hidden {
+//            pageIndicatorLabel.hidden = false
+//            
+//            UIView.animateWithDuration(0.8, animations: {
+//                self.pageIndicatorLabel.alpha = 1.0
+//                }) { finished in self.hidePageIndicator() }
+//        }
+//    }
+//    
+//    func hidePageIndicator() {
+//        UIView.animateWithDuration(0.8, delay: 0.3, options: nil, animations: {
+//            self.pageIndicatorLabel.alpha = 0.0
+//            }) { finished in self.pageIndicatorLabel.hidden = true }
+//    }
     
     // MARK: Navigation
     
@@ -145,6 +148,8 @@ class FeedbackSheetViewController: UIViewController, FeedbackSheetPageController
             if let pageTVC = segue.destinationViewController as? FeedbackSheetPageTableViewController {
                 if pages.count > 0 {
                     pageTVC.page = pages[pageIndex]
+                    pageTVC.sheetTitle = sheet.title
+                    pageTVC.lastPage = (pageIndex < pages.count) ? false : true
                 }
                 pageTVC.delegate = self
                 self.pageTVC = pageTVC

@@ -11,9 +11,9 @@ import UIKit
 class TextAreaCell: ModuleCell, UITextViewDelegate {
     // MARK: Properties
     
-    @IBOutlet var descriptionLabel: UILabel
-    @IBOutlet var textView: UITextView
-    @IBOutlet var charactersLabel: UILabel
+    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var textView: UITextView!
+    @IBOutlet var charactersLabel: UILabel!
     
     override var module: FeedbackSheetModule? {
     willSet {
@@ -40,6 +40,33 @@ class TextAreaCell: ModuleCell, UITextViewDelegate {
         textView.layer.borderWidth = 1.5
         textView.layer.cornerRadius = 5
         textView.delegate = self
+        
+        let doneButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: "finishTextViewEditing")
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: 44.0))
+        toolbar.setItems([flexibleSpace, doneButtonItem], animated: false)
+        
+        textView.inputAccessoryView = toolbar
+    }
+    
+    // MARK: Actions
+    
+    override func reloadWithResponseData(responseData: AnyObject) {
+        let text = responseData as String
+        let textLength = countElements(text)
+        var shouldChange = true
+        textView.text = text
+        
+        if let textModule = module as? TextModule {
+            shouldChange = (textLength <= textModule.characterLimit) ? true : false
+            if shouldChange {
+                charactersLabel.text = "Remaining characters: \(textModule.characterLimit - textLength)"
+            }
+        }
+    }
+    
+    func finishTextViewEditing() {
+        textView.resignFirstResponder()
     }
     
     // MARK: UITextViewDelegate
@@ -57,6 +84,7 @@ class TextAreaCell: ModuleCell, UITextViewDelegate {
         
         return shouldChange
     }
+    
     
     func textViewDidEndEditing(textView: UITextView!) {
         if let textModule = module as? TextModule {

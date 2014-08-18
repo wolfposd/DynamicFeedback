@@ -12,13 +12,13 @@ class FeedbackSheetPage {
     // MARK: Properties
     
     let title = "No Title"
-    let modulesVisible: FeedbackSheetModule[]
-    let modulesInvisible: FeedbackSheetModule[]
+    let modulesVisible: [FeedbackSheetModule]
+    let modulesInvisible: [FeedbackSheetModule]
     
     // MARK: Init
     
-    init(title: String?, modulesVisible: FeedbackSheetModule[], modulesInvisible: FeedbackSheetModule[]) {
-        if title {
+    init(title: String?, modulesVisible: [FeedbackSheetModule], modulesInvisible: [FeedbackSheetModule]) {
+        if title != nil {
             self.title = title!
         }
         self.modulesVisible = modulesVisible
