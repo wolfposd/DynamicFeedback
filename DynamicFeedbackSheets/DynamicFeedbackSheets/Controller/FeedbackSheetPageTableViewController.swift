@@ -109,7 +109,7 @@ class FeedbackSheetPageTableViewController: UITableViewController, ModuleCellDel
             }
         case .StarRating:
             if let tempCell = moduleCell as? StarRatingCell {
-                // No implementation yet
+                tempCell.setModule(module)
             }
         case .Date:
             if let tempCell = moduleCell as? DateCell {
@@ -129,7 +129,6 @@ class FeedbackSheetPageTableViewController: UITableViewController, ModuleCellDel
         
         // Reload persisted state
         if let data = responsesDictionary[module.ID] {
-            println("ID: \(module.ID) Data: \(data)")
             moduleCell.reloadWithResponseData(data)
         }
         
