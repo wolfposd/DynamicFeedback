@@ -12,6 +12,7 @@ class StartUpViewController: UIViewController, FeedbackSheetManagerDelegate, Fee
     // MARK: Properties
     
     let manager = FeedbackSheetManager(baseURL: "http://beeqn.informatik.uni-hamburg.de/feedback/rest.php/")
+    let sheetID = "3"
     
     // MARK: View Life Cycle
     
@@ -38,7 +39,7 @@ class StartUpViewController: UIViewController, FeedbackSheetManagerDelegate, Fee
     }
     
     func feedbackSheetManager(manager: FeedbackSheetManager, didPostSheetWithSuccess success: Bool) {
-        
+        println("Posting successful")
     }
     
     func feedbackSheetManager(manager: FeedbackSheetManager, didFailWithError error: NSError) {
@@ -51,6 +52,7 @@ class StartUpViewController: UIViewController, FeedbackSheetManagerDelegate, Fee
     func feedbackSheetViewController(controller: FeedbackSheetViewController, finishedWithResponse response: NSDictionary!) {
         // next step: posting response
         println("posting \(response)")
+        manager.postResponseWithSheetID(sheetID, response: response)
     }
     
     func feedbackSheetViewController(controller: FeedbackSheetViewController, didFailWithError error: NSError) {
