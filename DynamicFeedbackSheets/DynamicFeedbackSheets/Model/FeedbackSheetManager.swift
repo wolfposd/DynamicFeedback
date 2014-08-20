@@ -52,7 +52,7 @@ class FeedbackSheetManager {
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue()) {
             response, data, error in
-            if error {
+            if error != nil {
                 self.delegate?.feedbackSheetManager(self, didFailWithError: error)
             } else {
                 if let jsonData = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? NSDictionary {
@@ -77,23 +77,26 @@ class FeedbackSheetManager {
         :param: sheetID The ID of the sheet you want to post the responses to.
         :param: responses Dictionary with the responses of each sheet module.
     */
-    func postResponsesWithSheetID(sheetID: Int, responses: NSDictionary) {
+    func postResponseWithSheetID(sheetID: String, response: NSDictionary) {
         
         let fetchURL = NSURL(string: "\(baseURL)sheet/id/\(sheetID)")
         let request = NSMutableURLRequest(URL: fetchURL)
         request.HTTPMethod = "PUT"
         
         var error: NSError?
-        let jsonData = NSJSONSerialization.dataWithJSONObject(responses, options: nil, error: &error)
+        let jsonData = NSJSONSerialization.dataWithJSONObject(response, options: nil, error: &error)
         
         request.HTTPBody = jsonData
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue()) {
             response, data, error in
-            if error {
+            if error != nil {
                 self.delegate?.feedbackSheetManager(self, didFailWithError: error)
+                self.delegate?.feedbackSheetManager(self, didPostSheetWithSuccess: false)
             } else {
                 // success
+                println(response)
+                self.delegate?.feedbackSheetManager(self, didPostSheetWithSuccess: true)
             }
         }
     }

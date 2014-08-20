@@ -48,9 +48,7 @@ class ListCell: ModuleCell {
     
     override func reloadWithResponseData(responseData: AnyObject) {
         for index in 0..<listControl.numberOfSegments {
-            println("Segment title: \(listControl.titleForSegmentAtIndex(index)), response \(responseData)")
             if responseData as String == listControl.titleForSegmentAtIndex(index) {
-                println("match")
                 listControl.selectedSegmentIndex = index
             }
         }

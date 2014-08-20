@@ -21,7 +21,7 @@ class CheckboxCell: ModuleCell {
     }
     }
     
-    // MARK: Testing, current Bug in Xcode (Ambiguous use of module)
+    // FIXME: Testing, current Bug in Xcode (Ambiguous use of module)
     
     func setModule(module: FeedbackSheetModule) {
         self.module = module
